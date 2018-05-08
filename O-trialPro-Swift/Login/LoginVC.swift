@@ -38,7 +38,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         nameTF.layer.borderColor = UIColor.init(hexString: "dddddd").cgColor
         let leftIV = UIImageView(image: UIImage(named: "my_login_user"))
         leftIV.frame = CGRect.init(x: 20, y: 0, width: 55, height: 25)
-        leftIV.layer.bo
+        leftIV.layer.borderWidth = 1.0;
         leftIV.contentMode = UIViewContentMode.right
         nameTF.leftViewMode = UITextFieldViewMode.always
         nameTF.leftView = leftIV
