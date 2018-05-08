@@ -30,7 +30,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         let logo = UIImage(named: "my_login_logo")
         _ = logoIV.sd_layout().centerXEqualToView(view)?.topSpaceToView(view, (logo?.size.height)!)?.widthIs((logo?.size.width)!)?.heightIs(120)
         
-        nameTF = UITextField();
+        nameTF = UITextField()
         view.addSubview(nameTF)
         nameTF.placeholder = "         用户名"
         nameTF.font = UIFont.systemFont(ofSize: 17);
@@ -50,7 +50,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         nameTF.setValue(NSNumber(value: Float(w)), forKey: "paddingLeft")
 
-        
+        pwdTF = UITextField()
+        view.addSubview(pwdTF)
+        pwdTF.placeholder = "     密码"
+        pwdTF.layer.borderWidth = 1
+        pwdTF.layer.borderColor = UIColor.init(hexString: "dddddd").cgColor
         
         
     }
