@@ -1,0 +1,6 @@
+framework module Pods_O_trialPro_Swift {
+  umbrella header "Pods-O-trialPro-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7628D239C36F7C34B4EF14B0 /* Pods_O_trialPro_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */; };
 		C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */; };
 		C02E6C8720A174BD001D4963 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */; };
+		C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */; };
+		C02E6CA120A2D730001D4963 /* OTConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA020A2D730001D4963 /* OTConstans.swift */; };
+		C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA220A2D741001D4963 /* OTUtils.swift */; };
+		C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */; };
+		C02E6CAA20A2F4B8001D4963 /* Stu.m in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA920A2F4B8001D4963 /* Stu.m */; };
 		C0E9558A20A019740091908D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9558920A019740091908D /* AppDelegate.swift */; };
 		C0E9558C20A019740091908D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9558B20A019740091908D /* ViewController.swift */; };
 		C0E9558F20A019740091908D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9558D20A019740091908D /* Main.storyboard */; };
@@ -22,8 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_O_trialPro_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D746442B86130FE65D1879C /* Pods-O-trialPro-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-O-trialPro-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-O-trialPro-Swift/Pods-O-trialPro-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		C02E6C9820A2C637001D4963 /* JMWhenTapped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTapped.h; sourceTree = "<group>"; };
+		C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WhenTappedBlocks.m"; sourceTree = "<group>"; };
+		C02E6C9A20A2C637001D4963 /* UIView+WhenTappedBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WhenTappedBlocks.h"; sourceTree = "<group>"; };
+		C02E6CA020A2D730001D4963 /* OTConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTConstans.swift; sourceTree = "<group>"; };
+		C02E6CA220A2D741001D4963 /* OTUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUtils.swift; sourceTree = "<group>"; };
+		C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+OTExtension.swift"; sourceTree = "<group>"; };
+		C02E6CA820A2F4B8001D4963 /* Stu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stu.h; sourceTree = "<group>"; };
+		C02E6CA920A2F4B8001D4963 /* Stu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stu.m; sourceTree = "<group>"; };
 		C0E9558620A019740091908D /* O-trialPro-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O-trialPro-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9558920A019740091908D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E9558B20A019740091908D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +56,7 @@
 		C0E955A920A029CC0091908D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C0E955AA20A029CC0091908D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C0E955B220A02B400091908D /* Bridge_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge_header.h; sourceTree = "<group>"; };
+		D89EDF002024F806322A8811 /* Pods-O-trialPro-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-O-trialPro-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-O-trialPro-Swift/Pods-O-trialPro-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,19 +64,82 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7628D239C36F7C34B4EF14B0 /* Pods_O_trialPro_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2190270C5488FBED2A8EC9A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D89EDF002024F806322A8811 /* Pods-O-trialPro-Swift.debug.xcconfig */,
+				5D746442B86130FE65D1879C /* Pods-O-trialPro-Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4363C27E1F142A878AD77D3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C02E6C7E20A14A69001D4963 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */,
 				C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */,
+				C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		C02E6C9720A2C637001D4963 /* UIViewTouch */ = {
+			isa = PBXGroup;
+			children = (
+				C02E6C9820A2C637001D4963 /* JMWhenTapped.h */,
+				C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */,
+				C02E6C9A20A2C637001D4963 /* UIView+WhenTappedBlocks.h */,
+			);
+			path = UIViewTouch;
+			sourceTree = "<group>";
+		};
+		C02E6C9C20A2D0D8001D4963 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C02E6C9D20A2D0D8001D4963 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0E9559E20A01DEC0091908D /* LoginVC.swift */,
+				C02E6CA820A2F4B8001D4963 /* Stu.h */,
+				C02E6CA920A2F4B8001D4963 /* Stu.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C02E6C9E20A2D0D9001D4963 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C02E6C9F20A2D675001D4963 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				C0E955AF20A029F70091908D /* GlobalHeader */,
+				C02E6CA020A2D730001D4963 /* OTConstans.swift */,
+				C02E6CA220A2D741001D4963 /* OTUtils.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 		C0E9557D20A019730091908D = {
@@ -67,6 +147,8 @@
 			children = (
 				C0E9558820A019740091908D /* O-trialPro-Swift */,
 				C0E9558720A019740091908D /* Products */,
+				2190270C5488FBED2A8EC9A0 /* Pods */,
+				4363C27E1F142A878AD77D3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +167,7 @@
 				C0E9558B20A019740091908D /* ViewController.swift */,
 				C0E9559D20A01DD20091908D /* Login */,
 				C02E6C7E20A14A69001D4963 /* Category */,
-				C0E955AF20A029F70091908D /* GlobalHeader */,
+				C02E6C9F20A2D675001D4963 /* Global */,
 				C0E955A020A029B70091908D /* ToolClass */,
 				C0E9558D20A019740091908D /* Main.storyboard */,
 				C0E9559020A019760091908D /* Assets.xcassets */,
@@ -98,7 +180,9 @@
 		C0E9559D20A01DD20091908D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				C0E9559E20A01DEC0091908D /* LoginVC.swift */,
+				C02E6C9D20A2D0D8001D4963 /* Controller */,
+				C02E6C9C20A2D0D8001D4963 /* Model */,
+				C02E6C9E20A2D0D9001D4963 /* View */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -106,6 +190,7 @@
 		C0E955A020A029B70091908D /* ToolClass */ = {
 			isa = PBXGroup;
 			children = (
+				C02E6C9720A2C637001D4963 /* UIViewTouch */,
 				C0E955A120A029CC0091908D /* SDAutoLayout */,
 			);
 			path = ToolClass;
@@ -156,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0E9559820A019760091908D /* Build configuration list for PBXNativeTarget "O-trialPro-Swift" */;
 			buildPhases = (
+				B82A6BE68835EB8D677C882A /* [CP] Check Pods Manifest.lock */,
 				C0E9558220A019740091908D /* Sources */,
 				C0E9558320A019740091908D /* Frameworks */,
 				C0E9558420A019740091908D /* Resources */,
+				ABED8C609EBF1D7480B36BAB /* [CP] Embed Pods Frameworks */,
+				4AE09CB6C4637DF1285011BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,18 +305,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AE09CB6C4637DF1285011BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-O-trialPro-Swift/Pods-O-trialPro-Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABED8C609EBF1D7480B36BAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-O-trialPro-Swift/Pods-O-trialPro-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B82A6BE68835EB8D677C882A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C0E9558220A019740091908D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02E6CAA20A2F4B8001D4963 /* Stu.m in Sources */,
+				C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */,
+				C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */,
 				C0E9558C20A019740091908D /* ViewController.swift in Sources */,
 				C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */,
 				C02E6C8720A174BD001D4963 /* UITextField+Extension.swift in Sources */,
 				C0E9558A20A019740091908D /* AppDelegate.swift in Sources */,
 				C0E955AB20A029CC0091908D /* UIView+SDAutoLayout.m in Sources */,
 				C0E9559F20A01DEC0091908D /* LoginVC.swift in Sources */,
+				C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */,
 				C0E955AC20A029CC0091908D /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				C02E6CA120A2D730001D4963 /* OTConstans.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,10 +511,13 @@
 		};
 		C0E9559920A019760091908D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D89EDF002024F806322A8811 /* Pods-O-trialPro-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRDE53LHF8;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "O-trialPro-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,7 +525,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oceanus-plus.O-trialPro-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "O-trialPro-Swift/GlobalHeader/Bridge_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/GlobalHeader/Bridge_header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -389,10 +533,13 @@
 		};
 		C0E9559A20A019760091908D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D746442B86130FE65D1879C /* Pods-O-trialPro-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRDE53LHF8;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "O-trialPro-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -400,7 +547,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oceanus-plus.O-trialPro-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "O-trialPro-Swift/GlobalHeader/Bridge_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/GlobalHeader/Bridge_header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
