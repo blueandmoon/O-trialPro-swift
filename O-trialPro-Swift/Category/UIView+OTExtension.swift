@@ -159,6 +159,29 @@ extension UIView {
     }
     
     
+    //  MARK:   -   加载动画
+    public func startAnimationLoading() {
+        let window = UIApplication.shared.keyWindow
+        
+        let maskV = UIView(frame: (window?.bounds)!)
+        window?.addSubview(maskV)
+        maskV.backgroundColor = UIColor.purple
+        maskV.alpha = 0.3
+        maskV.tag = 12345
+        
+        
+    }
+    
+    func endAnimationLoading() {
+        let window = UIApplication.shared.keyWindow
+        for v:UIView in (window?.subviews)! {
+            if v.tag == 12345 {
+                v.removeFromSuperview()
+            }
+        }
+    }
+    
+    
     
     
     

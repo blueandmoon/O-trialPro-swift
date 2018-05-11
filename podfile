@@ -1,10 +1,12 @@
 platform :ios, '8.0'
 use_frameworks! 
 target 'O-trialPro-Swift' do
+
+    pod 'Alamofire'
     pod 'MJRefresh'
     pod 'SDWebImage'
     pod 'MJExtension'
     pod 'MJRefresh'
-    pod  'ReactiveCocoa' 
+    
     pod 'IQKeyboardManager'
 end

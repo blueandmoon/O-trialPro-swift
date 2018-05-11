@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Alamofire
+
+
+//为(_ num1: Int, _ num2: Int) -> (Int) 类型的闭包定义别名：Add
+typealias Add = (_ num1: Int, _ num2: Int) -> (Int)
 
 class LoginVC: UIViewController, UITextFieldDelegate {
 
     var nameTF : UITextField!
     var pwdTF : UITextField!
-    
+//    var testBlock = LGWhenTappedBlock.self
+    var ttt: Add!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +29,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(self.tapClick(_:)))
         view.addGestureRecognizer(tap)
+        
+        
+        
         
     }
     
@@ -38,6 +47,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         
         nameTF = UITextField()
+        
+        
         view.addSubview(nameTF)
         nameTF.placeholder = "         用户名"
         nameTF.font = UIFont.systemFont(ofSize: 17);
@@ -89,9 +100,23 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             loginBtn.gradientLayerHorizontal("FF7F58".toUIColor(), "FDA21E".toUIColor())
         };
         
-//            (CGRect, free); do {
-//            loginBtn.gradientLayerHorizontal(.black, .red)
-//        };
+        
+        
+        let z: LGWhenTappedBlock
+        z = { () in
+            OTUtils.LogOut("闭包")
+        }
+        _ = z()
+        
+        let closer: (Int) -> (Int) = {
+            (num1) in
+            
+            return num1 * 2
+        }
+        let res = closer(3)
+        OTUtils.LogOut(res)
+        
+        
         
         
         
@@ -104,9 +129,36 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @objc func loginClick(_ button: UIButton) {
         
-        print("login...")
+        if (nameTF.text?.count)! < 0 {
+            OTUtils.LogOut("请输入用户名")
+            return
+        }
+        if (pwdTF.text?.count)! < 0 {
+            OTUtils.LogOut("请输入密码")
+            return
+        }
+        
+//        HttpHelper.Shared.Get(path: "http://v.juhe.cn/wz/status", success: { (res) in
+//            OTUtils.LogOut(res)
+//        }) { (error) in
+//            OTUtils.LogOut(error)
+//        }
+//        
+//        var params = [String: String]()
+//        params["name"] = "ligen"
+//        OTUtils.LogOut(params)
+//        
+//        HttpHelper.Shared.Post(path: "http://v.juhe.cn/wz/carPre", params: ["s":"sss"], success: { (res) in
+//            OTUtils.LogOut(res)
+//        }) { (error) in
+//            OTUtils.LogOut(error)
+//        }
+        
+     
         
     }
+    
+    
     
 
     override func didReceiveMemoryWarning() {

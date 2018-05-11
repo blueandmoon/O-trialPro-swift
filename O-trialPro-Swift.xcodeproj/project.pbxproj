@@ -14,9 +14,13 @@
 		C02E6CA120A2D730001D4963 /* OTConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA020A2D730001D4963 /* OTConstans.swift */; };
 		C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA220A2D741001D4963 /* OTUtils.swift */; };
 		C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */; };
-		C02E6CAA20A2F4B8001D4963 /* Stu.m in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA920A2F4B8001D4963 /* Stu.m */; };
+		C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */; };
+		C02E6CAF20A420E0001D4963 /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CAE20A420E0001D4963 /* LoadingAnimationView.swift */; };
+		C02E6CB220A4219B001D4963 /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = C02E6CB120A4219B001D4963 /* load.gif */; };
+		C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */; };
+		C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1620A562DD00188D3C /* HttpManager.swift */; };
+		C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */; };
 		C0E9558A20A019740091908D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9558920A019740091908D /* AppDelegate.swift */; };
-		C0E9558C20A019740091908D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9558B20A019740091908D /* ViewController.swift */; };
 		C0E9558F20A019740091908D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9558D20A019740091908D /* Main.storyboard */; };
 		C0E9559120A019760091908D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E9559020A019760091908D /* Assets.xcassets */; };
 		C0E9559420A019760091908D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9559220A019760091908D /* LaunchScreen.storyboard */; };
@@ -38,11 +42,15 @@
 		C02E6CA020A2D730001D4963 /* OTConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTConstans.swift; sourceTree = "<group>"; };
 		C02E6CA220A2D741001D4963 /* OTUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUtils.swift; sourceTree = "<group>"; };
 		C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+OTExtension.swift"; sourceTree = "<group>"; };
-		C02E6CA820A2F4B8001D4963 /* Stu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stu.h; sourceTree = "<group>"; };
-		C02E6CA920A2F4B8001D4963 /* Stu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stu.m; sourceTree = "<group>"; };
+		C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+WhenTapBlcok.swift"; sourceTree = "<group>"; };
+		C02E6CAE20A420E0001D4963 /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
+		C02E6CB120A4219B001D4963 /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
+		C0E3AC1220A55C5D00188D3C /* SHAEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAEncoder.h; sourceTree = "<group>"; };
+		C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAEncoder.m; sourceTree = "<group>"; };
+		C0E3AC1620A562DD00188D3C /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTLoginCenter.swift; sourceTree = "<group>"; };
 		C0E9558620A019740091908D /* O-trialPro-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O-trialPro-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9558920A019740091908D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C0E9558B20A019740091908D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C0E9558E20A019740091908D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0E9559020A019760091908D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0E9559320A019760091908D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 				C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */,
 				C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */,
 				C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */,
+				C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -102,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				C02E6C9820A2C637001D4963 /* JMWhenTapped.h */,
-				C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */,
 				C02E6C9A20A2C637001D4963 /* UIView+WhenTappedBlocks.h */,
+				C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */,
 			);
 			path = UIViewTouch;
 			sourceTree = "<group>";
@@ -119,8 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				C0E9559E20A01DEC0091908D /* LoginVC.swift */,
-				C02E6CA820A2F4B8001D4963 /* Stu.h */,
-				C02E6CA920A2F4B8001D4963 /* Stu.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -135,11 +142,40 @@
 		C02E6C9F20A2D675001D4963 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				C0E9558920A019740091908D /* AppDelegate.swift */,
 				C0E955AF20A029F70091908D /* GlobalHeader */,
 				C02E6CA020A2D730001D4963 /* OTConstans.swift */,
 				C02E6CA220A2D741001D4963 /* OTUtils.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		C02E6CAD20A420A6001D4963 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C0E3AC1520A562BF00188D3C /* HttpManager */,
+				C0E3AC1220A55C5D00188D3C /* SHAEncoder.h */,
+				C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */,
+				C02E6CAE20A420E0001D4963 /* LoadingAnimationView.swift */,
+				C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C02E6CB020A4213E001D4963 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C02E6CB120A4219B001D4963 /* load.gif */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C0E3AC1520A562BF00188D3C /* HttpManager */ = {
+			isa = PBXGroup;
+			children = (
+				C0E3AC1620A562DD00188D3C /* HttpManager.swift */,
+			);
+			path = HttpManager;
 			sourceTree = "<group>";
 		};
 		C0E9557D20A019730091908D = {
@@ -163,10 +199,10 @@
 		C0E9558820A019740091908D /* O-trialPro-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				C0E9558920A019740091908D /* AppDelegate.swift */,
-				C0E9558B20A019740091908D /* ViewController.swift */,
 				C0E9559D20A01DD20091908D /* Login */,
 				C02E6C7E20A14A69001D4963 /* Category */,
+				C02E6CAD20A420A6001D4963 /* Common */,
+				C02E6CB020A4213E001D4963 /* Resource */,
 				C02E6C9F20A2D675001D4963 /* Global */,
 				C0E955A020A029B70091908D /* ToolClass */,
 				C0E9558D20A019740091908D /* Main.storyboard */,
@@ -299,6 +335,7 @@
 				C0E9559120A019760091908D /* Assets.xcassets in Resources */,
 				C0E955AE20A029CC0091908D /* README.md in Resources */,
 				C0E955AD20A029CC0091908D /* LICENSE in Resources */,
+				C02E6CB220A4219B001D4963 /* load.gif in Resources */,
 				C0E9558F20A019740091908D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,11 +395,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C02E6CAA20A2F4B8001D4963 /* Stu.m in Sources */,
 				C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */,
+				C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */,
+				C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */,
+				C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */,
 				C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */,
-				C0E9558C20A019740091908D /* ViewController.swift in Sources */,
 				C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */,
+				C02E6CAF20A420E0001D4963 /* LoadingAnimationView.swift in Sources */,
 				C02E6C8720A174BD001D4963 /* UITextField+Extension.swift in Sources */,
 				C0E9558A20A019740091908D /* AppDelegate.swift in Sources */,
 				C0E955AB20A029CC0091908D /* UIView+SDAutoLayout.m in Sources */,
@@ -370,6 +409,7 @@
 				C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */,
 				C0E955AC20A029CC0091908D /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				C02E6CA120A2D730001D4963 /* OTConstans.swift in Sources */,
+				C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +559,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "O-trialPro-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,6 +569,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/GlobalHeader/Bridge_header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
 			};
 			name = Debug;
 		};
@@ -541,6 +583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "O-trialPro-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,6 +593,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/GlobalHeader/Bridge_header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
 			};
 			name = Release;
 		};
