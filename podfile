@@ -1,7 +1,8 @@
 platform :ios, '8.0'
 use_frameworks! 
 target 'O-trialPro-Swift' do
-
+#    pod 'YBAttributeString'
+    pod 'YBAttributeTextTapAction'
     pod 'Alamofire'
     pod 'MJRefresh'
     pod 'SDWebImage'

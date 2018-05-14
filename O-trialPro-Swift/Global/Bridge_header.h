@@ -11,6 +11,7 @@
 
 #import "SDAutoLayout.h"
 #import "SHAEncoder.h"
+#import "UILabel+YBAttributeTextTapAction.h"
 //#import <sd>
 //#import <ReactiveCocoa/ReactiveCocoa.h>
 //#import <IQKeyboardManager.h>

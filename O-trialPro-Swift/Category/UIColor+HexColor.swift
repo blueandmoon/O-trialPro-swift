@@ -8,8 +8,10 @@
 
 import UIKit
 
-class UIColor_HexColor: UIColor {
 
+class UIColor_HexColor: UIColor {
+    
+    
 }
 
 extension UIColor {

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4EE972EC0558CE415353F7B11C759BED"
-               BlueprintName = "SDWebImage"
+               BlueprintIdentifier = "925AAB85CFA7FD2CD7C174B1A7705173"
+               BlueprintName = "YBAttributeTextTapAction"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SDWebImage.framework">
+               BuildableName = "YBAttributeTextTapAction.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

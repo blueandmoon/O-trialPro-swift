@@ -20,6 +20,9 @@
 		C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */; };
 		C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1620A562DD00188D3C /* HttpManager.swift */; };
 		C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */; };
+		C0E3AC1D20A955E600188D3C /* OTLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1C20A955E600188D3C /* OTLoginTextField.swift */; };
+		C0E3AC1F20A9685F00188D3C /* NSString+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1E20A9685F00188D3C /* NSString+Extensioin.swift */; };
+		C0E3AC2320A9714000188D3C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC2220A9714000188D3C /* String+Extension.swift */; };
 		C0E9558A20A019740091908D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9558920A019740091908D /* AppDelegate.swift */; };
 		C0E9558F20A019740091908D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9558D20A019740091908D /* Main.storyboard */; };
 		C0E9559120A019760091908D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E9559020A019760091908D /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAEncoder.m; sourceTree = "<group>"; };
 		C0E3AC1620A562DD00188D3C /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTLoginCenter.swift; sourceTree = "<group>"; };
+		C0E3AC1C20A955E600188D3C /* OTLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTLoginTextField.swift; sourceTree = "<group>"; };
+		C0E3AC1E20A9685F00188D3C /* NSString+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Extensioin.swift"; sourceTree = "<group>"; };
+		C0E3AC2220A9714000188D3C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C0E9558620A019740091908D /* O-trialPro-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O-trialPro-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9558920A019740091908D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E9558E20A019740091908D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 		C02E6C9E20A2D0D9001D4963 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C0E3AC1C20A955E600188D3C /* OTLoginTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C0E9558920A019740091908D /* AppDelegate.swift */,
-				C0E955AF20A029F70091908D /* GlobalHeader */,
+				C0E955B220A02B400091908D /* Bridge_header.h */,
 				C02E6CA020A2D730001D4963 /* OTConstans.swift */,
 				C02E6CA220A2D741001D4963 /* OTUtils.swift */,
 			);
@@ -156,6 +163,8 @@
 				C0E3AC1520A562BF00188D3C /* HttpManager */,
 				C0E3AC1220A55C5D00188D3C /* SHAEncoder.h */,
 				C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */,
+				C0E3AC1E20A9685F00188D3C /* NSString+Extensioin.swift */,
+				C0E3AC2220A9714000188D3C /* String+Extension.swift */,
 				C02E6CAE20A420E0001D4963 /* LoadingAnimationView.swift */,
 				C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */,
 			);
@@ -260,14 +269,6 @@
 				C0E955A820A029CC0091908D /* UIView+SDAutoLayout.h */,
 			);
 			path = SDAutoLayout;
-			sourceTree = "<group>";
-		};
-		C0E955AF20A029F70091908D /* GlobalHeader */ = {
-			isa = PBXGroup;
-			children = (
-				C0E955B220A02B400091908D /* Bridge_header.h */,
-			);
-			path = GlobalHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,13 +399,16 @@
 				C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */,
 				C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */,
 				C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */,
+				C0E3AC2320A9714000188D3C /* String+Extension.swift in Sources */,
 				C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */,
 				C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */,
 				C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */,
+				C0E3AC1D20A955E600188D3C /* OTLoginTextField.swift in Sources */,
 				C02E6CAF20A420E0001D4963 /* LoadingAnimationView.swift in Sources */,
 				C02E6C8720A174BD001D4963 /* UITextField+Extension.swift in Sources */,
 				C0E9558A20A019740091908D /* AppDelegate.swift in Sources */,
 				C0E955AB20A029CC0091908D /* UIView+SDAutoLayout.m in Sources */,
+				C0E3AC1F20A9685F00188D3C /* NSString+Extensioin.swift in Sources */,
 				C0E9559F20A01DEC0091908D /* LoginVC.swift in Sources */,
 				C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */,
 				C0E955AC20A029CC0091908D /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
@@ -566,7 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oceanus-plus.O-trialPro-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/GlobalHeader/Bridge_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/Bridge_header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";
@@ -590,7 +594,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oceanus-plus.O-trialPro-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/GlobalHeader/Bridge_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/O-trialPro-Swift/Global/Bridge_header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}/**";

@@ -8,18 +8,23 @@
 
 import UIKit
 
+//typealias ClosureType = (String, String) -> Void
+
 class HttpManager: NSObject {
 
 }
 
 public class HttpHelper {
     
+    
     //  单例
     public static var Shared = HttpHelper()
     
-    /// MARK:   - GET请求
-    
+    //  MARK:   - GET
     func Get(path: String, success: @escaping ((_ result: String) -> ()), failure: @escaping ((_ error: Error) ->())) {
+        
+        let path = HttpHelper().checkPathHeader(path)
+        
         let url = URL(string: path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         let session = URLSession.shared
         
@@ -36,15 +41,12 @@ public class HttpHelper {
     
     }
     
-    //  MARK:   -   POST请求
+    //  MARK:   -   POST
     func Post(path: String, params: Dictionary<String, String>, success: @escaping ((_ result: String) -> ()), failure: @escaping ((_ error: Error) -> ())) {
         
+        let path = HttpHelper().checkPathHeader(path)
         let url = URL(string: path)
         var request = URLRequest.init(url: url!)
-//        request.httpMethod = "post"
-//        request.httpBody = params.data(using: .utf8)
-        
-//        var params = [String: String]()
         let list  = NSMutableArray()
         if params.count > 0 {
             //设置为POST请求
@@ -62,11 +64,9 @@ public class HttpHelper {
             request.httpBody = paraData
         }
         
-        
-//        request.setValue("zh-CN,zh", forHTTPHeaderField: "Accept-Language")
-//        request .setValue(OTCenter.shared.token, forHTTPHeaderField: "Token")
-//        request.cachePolicy = URLRequest.CachePolicy.
-        
+        request.setValue("zh-CN,zh", forHTTPHeaderField: "Accept-Language")
+        request .setValue(OTCenter.shared.token, forHTTPHeaderField: "Token")
+        request.timeoutInterval = 10
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -84,7 +84,7 @@ public class HttpHelper {
     
     
     
-//    // MARK:- post请求
+//    // MARK:- post
 //    func Post(path: String,paras: String,success: @escaping ((_ result: String) -> ()),failure: @escaping ((_ error: Error) -> ())) {
 //
 //        let url = URL(string: path)
@@ -108,6 +108,15 @@ public class HttpHelper {
 //        }
 //        dataTask.resume()
 //    }
+    
+    
+    private func checkPathHeader(_ path: String) -> String {
+        var path = path
+        if !path.hasPrefix("http") {
+            path = OTNet.base_Url + path
+        }
+        return path
+    }
     
     
 }

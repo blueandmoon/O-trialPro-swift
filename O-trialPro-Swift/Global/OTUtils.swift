@@ -17,11 +17,29 @@ class OTUtils {
         let fileName = (file as NSString).lastPathComponent
         
         #if DEBUG
-        print("\(fileName)-\(line)-\(function):\(obj)")
+        print("\(fileName.components(separatedBy: ".")[0])-\(line)_\(function):\(obj)")
         #endif
     }
     
-   
+    
+    //  MARK:   - UserDefault
+    static func OTSetObject(_ value: String, _ key: String) {
+        UserDefaults.standard.set(value, forKey: key)
+        UserDefaults.standard.synchronize()
+    }
+    
+    static func OTObject(_ key: String) {
+        UserDefaults.standard.value(forKey: key)
+    }
+    
+    static func OTRemoveObjectForKey(_ key: String) {
+        UserDefaults.standard.removeObject(forKey: key)
+        UserDefaults.standard.synchronize()
+    }
+    
+    
+    
+    
     
 }
 
