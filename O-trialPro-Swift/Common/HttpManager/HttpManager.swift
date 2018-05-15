@@ -14,6 +14,13 @@ class HttpManager: NSObject {
 
 }
 
+struct Beer: Codable {
+    let success: String
+    let data: String
+    
+    
+}
+
 public class HttpHelper {
     
     
@@ -72,6 +79,10 @@ public class HttpHelper {
         let session = URLSession(configuration: config)
         let dataTask = session.dataTask(with: request) { (data, respond, error) in
             if let data = data {
+                
+                
+                
+                
                 if let result = String(data: data, encoding: .utf8) {
                     success(result)
                 }

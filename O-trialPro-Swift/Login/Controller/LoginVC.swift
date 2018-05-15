@@ -7,11 +7,20 @@
 //
 
 import UIKit
-import Alamofire
+
 
 
 //为(_ num1: Int, _ num2: Int) -> (Int) 类型的闭包定义别名：Add
 typealias Add = (_ num1: Int, _ num2: Int) -> (Int)
+
+struct ParserData {
+    var data: String
+    var errorCode: String
+    var errorMessage: String
+    var success: String
+    
+}
+
 
 class LoginVC: UIViewController, UITextFieldDelegate, YBAttributeTapActionDelegate {
 
@@ -124,26 +133,19 @@ class LoginVC: UIViewController, UITextFieldDelegate, YBAttributeTapActionDelega
         let params = ["email": nameTF.text!, "passWord": encodedPass]
         HttpHelper.Shared.Post(path: "/public/login", params: params as! Dictionary<String, String>, success: { (res) in
             OTUtils.LogOut(res)
+            OTUtils.LogOut("\("是否可序列化:")\(JSONSerialization.isValidJSONObject(res))")
+//            let jsonData = JSONSerialization.data(withJSONObject: res, options: JSONSerialization.WritingOptions)
+            
+            
         }) { (error) in
             OTUtils.LogOut(error)
         }
     }
     
-//    @objc func getAttributeTerms() -> NSMutableAttributedString {
-//        let str = "登录代表您已同意 用户注册及APP使用协议 和 用户使用协议(方案)"
-//        let attr = NSMutableAttributedString.init(string: str)
-//
-//        let range1 = str.range(of: "用户注册及APP使用协议")
-//
-//        let decorate = [YYTextDecoration decorationWithStyle:YYTextLineStyleSingle]
-//
-//        attr.yy_setTextUnderline(decorate, range: range1)
-//
-//
-//
-//    }
     func yb_attributeTapReturn(_ string: String!, range: NSRange, index: Int) {
         OTUtils.LogOut("\(string), \(index)")
+        
+        
     }
     
     

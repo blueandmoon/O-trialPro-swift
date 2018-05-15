@@ -20,17 +20,26 @@ extension UIColor {
         //  处理数值
         var cString = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
-        let length = (cString as NSString).length
+//        let length = (cString as NSString).length
         //  错误处理
-        if (length < 6 || length > 7 || (!cString.hasPrefix("#") && length == 7)) {
-            //  返回whiteColor
+//        if (length < 6 || length > 7 || (!cString.hasPrefix("#") && length == 7)) {
+//            //  返回whiteColor
+//            self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+//            return
+//        }
+//
+//        if cString.hasPrefix("#") {
+//            cString = (cString as NSString).substring(from: 1)
+//        }
+        if cString.hasPrefix("0x") {
+            cString = (cString as NSString).substring(from: 2)
+        } else if cString.hasPrefix("#") {
+            cString = (cString as NSString).substring(from: 1)
+        } else if cString.count != 6 {
             self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
             return
         }
         
-        if cString.hasPrefix("#") {
-            cString = (cString as NSString).substring(from: 1)
-        }
         
         //  字符串截取
         var range = NSRange()
