@@ -28,8 +28,9 @@ class OTUtils {
         UserDefaults.standard.synchronize()
     }
     
-    static func OTObject(_ key: String) {
-        UserDefaults.standard.value(forKey: key)
+    static func OTObject(_ key: String) -> String {
+        let temp = UserDefaults.standard.value(forKey: key)
+        return temp == nil ? "" : temp as! String
     }
     
     static func OTRemoveObjectForKey(_ key: String) {

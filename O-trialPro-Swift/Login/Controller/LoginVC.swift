@@ -7,20 +7,51 @@
 //
 
 import UIKit
-
+import ObjectMapper
 
 
 //为(_ num1: Int, _ num2: Int) -> (Int) 类型的闭包定义别名：Add
 typealias Add = (_ num1: Int, _ num2: Int) -> (Int)
 
 struct ParserData {
-    var data: String
-    var errorCode: String
-    var errorMessage: String
-    var success: String
+    var data: String?
+    var errorCode: String?
+    var errorMessage: String?
+    var success: String?
     
 }
 
+class Person: Codable {
+    var name: String = ""
+    var age: Int = 0
+    var score: Double = 0.00
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name_a"
+        case age
+//        case score
+    }
+}
+
+struct Template: Mappable {
+    var name_a: String?
+    var age: Int?
+    
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        name_a <- map["name_a"]
+        age <- map["age"]
+    }
+}
+
+class NetResponse: Codable {
+    var data: String?
+    var errorCode: String?
+    var errorMessage: String?
+    var success: Bool?
+}
 
 class LoginVC: UIViewController, UITextFieldDelegate, YBAttributeTapActionDelegate {
 
@@ -37,6 +68,21 @@ class LoginVC: UIViewController, UITextFieldDelegate, YBAttributeTapActionDelega
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(self.tapClick(_:)))
         view.addGestureRecognizer(tap)
+        
+        
+        //json字符串
+        let JSONString = "{\"name_a\":\"xiaoming\",\"age\":10, \"score\":98.5}"
+        guard let jsonData = JSONString.data(using: .utf8) else {
+            return
+        }
+        let decoder = JSONDecoder()
+        guard let obj = try? decoder.decode(Person.self, from: jsonData) else {
+            return
+        }
+        
+        OTUtils.LogOut(obj.name)
+        let stu = Template(JSONString: JSONString)
+        OTUtils.LogOut(stu)
         
         
         
@@ -102,6 +148,15 @@ class LoginVC: UIViewController, UITextFieldDelegate, YBAttributeTapActionDelega
         termsLbl.attributedText = attr
         
         
+//        let user_email = OTUtils.OTObject(OTPersistence.user_email)
+//        let user_pwd = OTUtils.OTObject(OTPersistence.user_pwd)
+//        let test = OTUtils.OTObject("hahah")
+
+        
+        nameTF.text = OTUtils.OTObject(OTPersistence.user_email)
+        pwdTF.text = OTUtils.OTObject(OTPersistence.user_pwd)
+//        OTUtils.LogOut("\(user_email), + \(user_pwd)")
+        
         
         
         
@@ -133,10 +188,16 @@ class LoginVC: UIViewController, UITextFieldDelegate, YBAttributeTapActionDelega
         let params = ["email": nameTF.text!, "passWord": encodedPass]
         HttpHelper.Shared.Post(path: "/public/login", params: params as! Dictionary<String, String>, success: { (res) in
             OTUtils.LogOut(res)
-            OTUtils.LogOut("\("是否可序列化:")\(JSONSerialization.isValidJSONObject(res))")
-//            let jsonData = JSONSerialization.data(withJSONObject: res, options: JSONSerialization.WritingOptions)
             
-            
+            let result = OTBaseModel(JSONString: res)
+            OTCenter.shared.token = result?.data as? String
+            if (result?.success)! {
+                DispatchQueue.main.async {
+                    OTUtils.OTSetObject(self.nameTF.text!, OTPersistence.user_email)
+                    OTUtils.OTSetObject(self.pwdTF.text!, OTPersistence.user_pwd)                    
+                }
+            }
+        
         }) { (error) in
             OTUtils.LogOut(error)
         }

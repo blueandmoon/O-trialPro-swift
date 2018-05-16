@@ -17,6 +17,8 @@
 		C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */; };
 		C02E6CAF20A420E0001D4963 /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CAE20A420E0001D4963 /* LoadingAnimationView.swift */; };
 		C02E6CB220A4219B001D4963 /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = C02E6CB120A4219B001D4963 /* load.gif */; };
+		C0314D3E20ABFAAD00317F0C /* OTLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0314D3D20ABFAAD00317F0C /* OTLoginModel.swift */; };
+		C0314D4020AC2FA200317F0C /* OTWKWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */; };
 		C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */; };
 		C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1620A562DD00188D3C /* HttpManager.swift */; };
 		C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */; };
@@ -25,7 +27,6 @@
 		C0E3AC2320A9714000188D3C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC2220A9714000188D3C /* String+Extension.swift */; };
 		C0E3AC2920AA6AAF00188D3C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC2820AA6AAF00188D3C /* BaseViewController.swift */; };
 		C0E3AC2B20AA73C500188D3C /* OTResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC2A20AA73C500188D3C /* OTResponseResult.swift */; };
-		C0E3AC2D20AA81AB00188D3C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC2C20AA81AB00188D3C /* Product.swift */; };
 		C0E9558A20A019740091908D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9558920A019740091908D /* AppDelegate.swift */; };
 		C0E9558F20A019740091908D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9558D20A019740091908D /* Main.storyboard */; };
 		C0E9559120A019760091908D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E9559020A019760091908D /* Assets.xcassets */; };
@@ -51,6 +52,8 @@
 		C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+WhenTapBlcok.swift"; sourceTree = "<group>"; };
 		C02E6CAE20A420E0001D4963 /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 		C02E6CB120A4219B001D4963 /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
+		C0314D3D20ABFAAD00317F0C /* OTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTLoginModel.swift; sourceTree = "<group>"; };
+		C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTWKWebController.swift; sourceTree = "<group>"; };
 		C0E3AC1220A55C5D00188D3C /* SHAEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAEncoder.h; sourceTree = "<group>"; };
 		C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAEncoder.m; sourceTree = "<group>"; };
 		C0E3AC1620A562DD00188D3C /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
@@ -60,7 +63,6 @@
 		C0E3AC2220A9714000188D3C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C0E3AC2820AA6AAF00188D3C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C0E3AC2A20AA73C500188D3C /* OTResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTResponseResult.swift; sourceTree = "<group>"; };
-		C0E3AC2C20AA81AB00188D3C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C0E9558620A019740091908D /* O-trialPro-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O-trialPro-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9558920A019740091908D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E9558E20A019740091908D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		C02E6C9C20A2D0D8001D4963 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C0E3AC2C20AA81AB00188D3C /* Product.swift */,
+				C0314D3D20ABFAAD00317F0C /* OTLoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +211,7 @@
 		C0E3AC2520AA6A7A00188D3C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,12 +440,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0314D3E20ABFAAD00317F0C /* OTLoginModel.swift in Sources */,
 				C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */,
 				C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */,
 				C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */,
 				C0E3AC2320A9714000188D3C /* String+Extension.swift in Sources */,
 				C0E3AC2920AA6AAF00188D3C /* BaseViewController.swift in Sources */,
 				C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */,
+				C0314D4020AC2FA200317F0C /* OTWKWebController.swift in Sources */,
 				C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */,
 				C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */,
 				C0E3AC1D20A955E600188D3C /* OTLoginTextField.swift in Sources */,
@@ -457,7 +462,6 @@
 				C02E6CA120A2D730001D4963 /* OTConstans.swift in Sources */,
 				C0E3AC2B20AA73C500188D3C /* OTResponseResult.swift in Sources */,
 				C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */,
-				C0E3AC2D20AA81AB00188D3C /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,7 @@ target 'O-trialPro-Swift' do
     pod 'Alamofire'
     pod 'MJRefresh'
     pod 'SDWebImage'
-    pod 'MJExtension'
     pod 'MJRefresh'
-    
+    pod 'ObjectMapper'
     pod 'IQKeyboardManager'
 end

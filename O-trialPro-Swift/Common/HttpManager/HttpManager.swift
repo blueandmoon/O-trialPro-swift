@@ -80,8 +80,9 @@ public class HttpHelper {
         let dataTask = session.dataTask(with: request) { (data, respond, error) in
             if let data = data {
                 
+                let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                 
-                
+//                OTUtils.LogOut(jsonObj!["data"] as String)
                 
                 if let result = String(data: data, encoding: .utf8) {
                     success(result)
@@ -92,33 +93,6 @@ public class HttpHelper {
         }
         dataTask.resume()
     }
-    
-    
-    
-//    // MARK:- post
-//    func Post(path: String,paras: String,success: @escaping ((_ result: String) -> ()),failure: @escaping ((_ error: Error) -> ())) {
-//
-//        let url = URL(string: path)
-//        var request = URLRequest.init(url: url!)
-//        request.httpMethod = "POST"
-//
-//        request.httpBody = paras.data(using: .utf8)
-//
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: request) { (data, respond, error) in
-//
-//            if let data = data {
-//
-//                if let result = String(data:data,encoding:.utf8){
-//                    success(result)
-//                }
-//
-//            }else {
-//                failure(error!)
-//            }
-//        }
-//        dataTask.resume()
-//    }
     
     
     private func checkPathHeader(_ path: String) -> String {
