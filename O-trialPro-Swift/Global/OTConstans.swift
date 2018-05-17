@@ -8,6 +8,23 @@
 
 import Foundation
 
+//  MARK: - 常用全局变量
+
+public let kScreenWidth = UIScreen.main.bounds.width
+public let kScreenHeight = UIScreen.main.bounds.height
+public let kStatusHeight = UIApplication.shared.statusBarFrame.size.height
+//public let kNavHeight_StatusHeight: ((UIViewController) -> CGFloat) = {
+//    (vc: UIViewController) -> CGFloat in
+//    weak var weakVC = vc
+//    var navHeight = weakVC?.navigationController?.navigationBar.bounds.size.height
+//    return (navHeight! + kStatusHeight)
+//}
+public let kIOSVersion = Double(UIDevice.current.systemVersion)
+public let kIPHONE_X = (kScreenWidth == 375 && kStatusHeight == 812 ? true : false)
+public let kTabbarHeight = (kIPHONE_X ? 83 : 49)
+public let kNavHeight = (kIPHONE_X ? 88 : 64)
+public let keyWindow = UIApplication.shared.keyWindow
+
 /// MARK    - 基本网址
 struct OTNet {
     //  development
@@ -42,6 +59,7 @@ struct OTPersistence {
     static let user_email = "user_emial"  //  用户名
     static let user_pwd = "user_pwd"  //  密码
 }
+
 
 
 

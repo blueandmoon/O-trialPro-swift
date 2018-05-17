@@ -117,6 +117,8 @@
 				C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */,
 				C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */,
 				C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */,
+				C0E3AC1E20A9685F00188D3C /* NSString+Extensioin.swift */,
+				C0E3AC2220A9714000188D3C /* String+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -173,8 +175,6 @@
 				C0E3AC1520A562BF00188D3C /* HttpManager */,
 				C0E3AC1220A55C5D00188D3C /* SHAEncoder.h */,
 				C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */,
-				C0E3AC1E20A9685F00188D3C /* NSString+Extensioin.swift */,
-				C0E3AC2220A9714000188D3C /* String+Extension.swift */,
 				C02E6CAE20A420E0001D4963 /* LoadingAnimationView.swift */,
 				C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */,
 				C0E3AC2820AA6AAF00188D3C /* BaseViewController.swift */,
@@ -256,8 +256,8 @@
 				C02E6C7E20A14A69001D4963 /* Category */,
 				C02E6CAD20A420A6001D4963 /* Common */,
 				C02E6CB020A4213E001D4963 /* Resource */,
-				C02E6C9F20A2D675001D4963 /* Global */,
 				C0E955A020A029B70091908D /* ToolClass */,
+				C02E6C9F20A2D675001D4963 /* Global */,
 				C0E9558D20A019740091908D /* Main.storyboard */,
 				C0E9559020A019760091908D /* Assets.xcassets */,
 				C0E9559220A019760091908D /* LaunchScreen.storyboard */,

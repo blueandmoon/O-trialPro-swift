@@ -39,6 +39,39 @@ class OTUtils {
     }
     
     
+    //  MARK:   -   加载动画
+    static func startAnimationLoading() {
+        let window = UIApplication.shared.keyWindow
+        
+        let maskV = UIView(frame: (window?.bounds)!)
+        window?.addSubview(maskV)
+        maskV.backgroundColor = UIColor.purple
+        maskV.alpha = 0.3
+        
+        //        UITapGestureRecognizer *tap
+        
+        
+    }
+    
+    func endAnimationLoading() {
+        let window = UIApplication.shared.keyWindow
+        for v:UIView in (window?.subviews)! {
+            if v.tag == 12345 {
+                v.removeFromSuperview()
+            }
+        }
+    }
+    
+    //  MARK:   - 加tap手势
+    func addTap(_ handler: (()->())) {
+        
+        //        let tap = UITapGestureRecognizer(target: self, action: #selector(handler))
+        
+        OTUtils.LogOut("哈哈哈哈")
+        if handler != nil {
+            handler()
+        }
+    }
     
     
     

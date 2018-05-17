@@ -80,10 +80,12 @@ class LoginVC: UIViewController, UITextFieldDelegate, YBAttributeTapActionDelega
             return
         }
         
-        OTUtils.LogOut(obj.name)
-        let stu = Template(JSONString: JSONString)
-        OTUtils.LogOut(stu)
         
+//        OTUtils.startAnimationLoading()
+        view.whenTapped {
+            OTUtils.LogOut("sssssssssssssssss")
+        }
+       
         
         
         

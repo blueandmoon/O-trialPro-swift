@@ -10,36 +10,16 @@ import Foundation
 
 typealias LGWhenTappedBlock = () -> ()
 
-private var testKey: Void?
+//private var testKey: Void?
 //private var kWhenTappedBlockKey: Void?
 
-private var kWhenTappedBlockKey:String = "whenTapClickKey"
+private var kWhenTappedBlockKey = "whenTapClickKey"
 
 extension UIView {
     
-//    var name: String? {
-//        get {
-////            var str = "ddddd"
-//            return objc_getAssociatedObject(self, &kWhenTappedBlockKey) as? String
-//        }
-//        set {
-//            objc_setAssociatedObject(self, &testKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-//        }
-//    }
-    
-//    var tap: LGWhenTappedBlock? {
-//        get {
-//            return objc_getAssociatedObject(self, &kWhenTappedBlockKey) as? LGWhenTappedBlock
-//        }
-//        set {
-//            self.isUserInteractionEnabled = true
-//            objc_setAssociatedObject(self, &kWhenTappedBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-//        }
-//    }
-    
-    @objc func whenTapped(_ block: LGWhenTappedBlock) {
+    @objc func whenTapped(block: @escaping () -> ()) {
         let tap = self.addTapGestureRecognizerWithTaps(1, 1, #selector(viewWasTapped))
-        self.addRequiredToDoubleTapsRecognizer(tap)
+//        self.addRequiredToDoubleTapsRecognizer(tap)
         self.setBlock(block,  kWhenTappedBlockKey)
     }
     
@@ -61,27 +41,31 @@ extension UIView {
     }
     
     @objc func runBlockForKey(_ blockKey: String) {
-        let block = objc_getAssociatedObject(self, blockKey) as? LGWhenTappedBlock
+        let block = objc_getAssociatedObject(self, &kWhenTappedBlockKey) as? LGWhenTappedBlock
+        
         if block != nil {
             block!()
         }
     }
-    func setBlock(_ block: LGWhenTappedBlock, _ blockKey: String) {
+    func setBlock(_ block: @escaping LGWhenTappedBlock, _ blockKey: String) {
         self.isUserInteractionEnabled = true
-        objc_setAssociatedObject(self, blockKey, block, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        objc_setAssociatedObject(self, &kWhenTappedBlockKey, block, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+//        objc_setAssociatedObject(self, blockKey, block, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        
     }
     
-    @objc func addRequiredToDoubleTapsRecognizer(_ recognizer: UITapGestureRecognizer) {
-        for gesture:UIGestureRecognizer in self.gestureRecognizers! {
-            if gesture.isKind(of: UITapGestureRecognizer.classForCoder()) {
-                let tapGesture = UITapGestureRecognizer()
-                if tapGesture.numberOfTouchesRequired == 2 && tapGesture.numberOfTapsRequired == 1
-                {
-                    recognizer.require(toFail: tapGesture)
-                }
-            }
-        }
-    }
+//    @objc func addRequiredToDoubleTapsRecognizer(_ recognizer: UITapGestureRecognizer) {
+//
+//        for gesture:UIGestureRecognizer in self.gestureRecognizers! {
+//            if gesture.isKind(of: UITapGestureRecognizer.classForCoder()) {
+//                let tapGesture = UITapGestureRecognizer()
+//                if tapGesture.numberOfTouchesRequired == 2 && tapGesture.numberOfTapsRequired == 1
+//                {
+//                    recognizer.require(toFail: tapGesture)
+//                }
+//            }
+//        }
+//    }
     
 //    func setAssociated<T>(value: T, associatedKey: UnsafeRawPointer, policy: objc_AssociationPolicy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC) -> Void {
 //        objc_setAssociatedObject(self, associatedKey, value, policy)
