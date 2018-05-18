@@ -43,12 +43,18 @@ class OTUtils {
     static func startAnimationLoading() {
         let window = UIApplication.shared.keyWindow
         
+        //  底层蒙版
         let maskV = UIView(frame: (window?.bounds)!)
         window?.addSubview(maskV)
         maskV.backgroundColor = UIColor.purple
         maskV.alpha = 0.3
+        maskV.whenTapped {
+            maskV.removeFromSuperview()
+        }
         
-        //        UITapGestureRecognizer *tap
+//        let imgV = UIImageView
+        
+        
         
         
     }

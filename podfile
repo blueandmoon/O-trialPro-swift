@@ -1,12 +1,11 @@
 platform :ios, '8.0'
 use_frameworks! 
 target 'O-trialPro-Swift' do
-#    pod 'YBAttributeString'
-    pod 'YBAttributeTextTapAction'
-    pod 'Alamofire'
-    pod 'MJRefresh'
-    pod 'SDWebImage'
-    pod 'MJRefresh'
-    pod 'ObjectMapper'
-    pod 'IQKeyboardManager'
+pod 'YBAttributeTextTapAction'  #   富文本点击
+    pod 'Alamofire' #   网络控件
+    pod 'Kingfisher'    #   sdwebimage的swift版
+    pod 'NVActivityIndicatorView'   #   加载器
+    pod 'DGElasticPullToRefresh'    #   刷新控件
+    pod 'ObjectMapper'  #   json <-> model
+    pod 'IQKeyboardManager' #   键盘
 end

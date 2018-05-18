@@ -18,7 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window?.rootViewController = LoginVC();
+        window?.makeKeyAndVisible()
         
+        let attr = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: UIColor.white]
+        UIBarButtonItem.appearance().setTitleTextAttributes(attr, for: .normal)
+        
+        let loginVC = LoginVC()
+        let rootNav = UINavigationController.init(rootViewController: loginVC)
+        window?.rootViewController = rootNav
         
         
         

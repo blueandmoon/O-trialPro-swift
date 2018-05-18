@@ -13,17 +13,14 @@ import Foundation
 public let kScreenWidth = UIScreen.main.bounds.width
 public let kScreenHeight = UIScreen.main.bounds.height
 public let kStatusHeight = UIApplication.shared.statusBarFrame.size.height
-//public let kNavHeight_StatusHeight: ((UIViewController) -> CGFloat) = {
-//    (vc: UIViewController) -> CGFloat in
-//    weak var weakVC = vc
-//    var navHeight = weakVC?.navigationController?.navigationBar.bounds.size.height
-//    return (navHeight! + kStatusHeight)
-//}
 public let kIOSVersion = Double(UIDevice.current.systemVersion)
 public let kIPHONE_X = (kScreenWidth == 375 && kStatusHeight == 812 ? true : false)
 public let kTabbarHeight = (kIPHONE_X ? 83 : 49)
-public let kNavHeight = (kIPHONE_X ? 88 : 64)
+public let kNavHeight = (kIPHONE_X ? 88.0 : 64.0)
 public let keyWindow = UIApplication.shared.keyWindow
+
+public let infoDictionary =  Bundle.main.infoDictionary
+public let shortVersion = infoDictionary!["CFBundleShortVersionString"]
 
 /// MARK    - 基本网址
 struct OTNet {
@@ -35,16 +32,16 @@ struct OTNet {
 
 //  MARK:   - OTCOLOR
 struct OTColor {
-    static let Main_Bg = "0xF8F8F8"   //  背景色
-    static let Light_Yellow = "0xF3970E"    //  明黄色
-    static let Blue_Black = "0x092948"  //  蓝黑色?
+    static let Main_Bg = "#F8F8F8"   //  背景色
+    static let Light_Yellow = "#F3970E"    //  明黄色
+    static let Blue_Black = "#092948"  //  蓝黑色?
     static let Blue_Light = "0594FF"    //  明蓝色
     static let Cycn_Light = "3BB204"    //  亮青色
     static let Title_Black = "333333"   //  标题黑
-    static let Content_Gray = "0x5C5C57"    //  内容灰黑?
-    static let SubText_Gray = "0x999999"    //  次级内容灰色?
-    static let Light_Gray = "0xCCCCCC"  //  浅灰色?
-    static let Tiny_Gray = "0xEEEEEE"   //  轻灰色
+    static let Content_Gray = "#5C5C57"    //  内容灰黑?
+    static let SubText_Gray = "#999999"    //  次级内容灰色?
+    static let Light_Gray = "#CCCCCC"  //  浅灰色?
+    static let Tiny_Gray = "#EEEEEE"   //  轻灰色
 }
 
 //  MARK:   - 时间格式

@@ -12,13 +12,23 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = .white
         
         
+//        let img = UIImage.imageFromColor(.red, CGSize(width: kScreenWidth, height: CGFloat(kNavHeight)))
+        self.navigationController?.navigationBar.barTintColor = OTColor.Light_Yellow.toUIColor()
+        self.navigationController?.navigationBar.shadowImage = UIImage()    //  导航栏下灰条
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        
-        
-        
+    }
+    
+    public func addBackItem() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "all_nav_black"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(backClick(_:)))
+    }
+    
+    @objc func backClick(_ backItem: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {

@@ -31,6 +31,44 @@ class OTWKWebController: BaseViewController, WKNavigationDelegate, WKUIDelegate,
         return web
     }()
     
+    var url: URL!
+    
+    
+//    convenience init(_ url: URL) {
+//
+//        self.url = url
+//    }
+    
+    init(_ url: URL) {
+        self.url = url
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.addBackItem()
+        
+        view.addSubview(webV)
+        if self.url != nil {
+            var request = URLRequest(url: self.url)
+            request.setValue(OTCenter.shared.token, forHTTPHeaderField: "token")
+            self.webV.load(request)
+        }
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+    }
+    
     
     func addJavaScript() {
         webV.evaluateJavaScript("document.title") { (obj, error) in
@@ -129,3 +167,10 @@ class OTWKWebController: BaseViewController, WKNavigationDelegate, WKUIDelegate,
     
 
 }
+
+//extension OTWKWebController {
+//    convenience init(_ url: URL) {
+//        self.init()
+//        self.url = url
+//    }
+//}

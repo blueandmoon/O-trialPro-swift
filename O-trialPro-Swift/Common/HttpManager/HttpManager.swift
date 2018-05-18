@@ -90,6 +90,8 @@ public class HttpHelper {
             } else {
                 failure(error!)
             }
+            
+            UIView.stopLoading()
         }
         dataTask.resume()
     }

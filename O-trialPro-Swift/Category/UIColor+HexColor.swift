@@ -77,13 +77,19 @@ extension String{
         
         let length = (cString as NSString).length
         //错误处理
-        if (length < 6 || length > 7 || (!cString.hasPrefix("#") && length == 7)){
+        if (length < 6 || length > 8 || (!cString.hasPrefix("#") && length == 7) || (!cString.hasPrefix("0X") && length == 8)){
             return UIColor.white
         }
         
         if cString.hasPrefix("#"){
             cString = (cString as NSString).substring(from: 1)
         }
+        
+        if cString.hasPrefix("0x") {
+            cString = (cString as NSString).substring(from: 2)
+        }
+        
+        
         
         //字符chuan截取
         var range = NSRange()
