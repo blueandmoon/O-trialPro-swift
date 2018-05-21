@@ -13,10 +13,11 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.isTranslucent = false
         
         
 //        let img = UIImage.imageFromColor(.red, CGSize(width: kScreenWidth, height: CGFloat(kNavHeight)))
-        self.navigationController?.navigationBar.barTintColor = OTColor.Light_Yellow.toUIColor()
+        self.navigationController?.navigationBar.barTintColor = OT_Light_Yellow.toUIColor()
         self.navigationController?.navigationBar.shadowImage = UIImage()    //  导航栏下灰条
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white

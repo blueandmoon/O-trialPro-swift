@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class OTBaseModel: Mappable {
-    var data: Any?
+//    var data: Any?
     var errorCode: Int?
     var errorMessage: String?
     var success: Bool?
@@ -22,10 +22,30 @@ class OTBaseModel: Mappable {
     }
     
     func mapping(map: Map) {
+//        data <- map["data"]
+//        errorCode <- map["errorCode"]
+//        errorMessage <- map["errorMessage"]
+//        success <- map["success"]
+    }
+}
+
+class OTLoginModel: OTBaseModel {
+    var data: String?
+    
+    override init() {
+        super.init()
+    }
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
         data <- map["data"]
         errorCode <- map["errorCode"]
         errorMessage <- map["errorMessage"]
         success <- map["success"]
+        
     }
 }
 

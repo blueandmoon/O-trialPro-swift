@@ -68,9 +68,9 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
 //
         
         configUI();
-//        view.whenTapped {
-//            self.view.endEditing(true)
-//        }
+        view.whenTapped {
+            self.view.endEditing(true)
+        }
         
         
     }
@@ -99,7 +99,8 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         nameTF = OTLoginTextField()
         view.addSubview(nameTF)
         nameTF.placeholder = "邮箱"
-        nameTF.text = OTUtils.OTObject(OTPersistence.user_email)
+        nameTF.text = OTUtils.OTObject(OT_User_Email
+        )
         nameTF.leftImg = UIImage(named: "my_login_user")
         _ = nameTF.sd_layout().centerXEqualToView(view)?.topSpaceToView(logoIV, 80)?.widthIs(view.bounds.size.width - 30)?.heightIs(45)
         
@@ -107,7 +108,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         view.addSubview(pwdTF)
         pwdTF.isSecureTextEntry = true
         pwdTF.placeholder = "密码"
-        pwdTF.text = OTUtils.OTObject(OTPersistence.user_pwd)
+        pwdTF.text = OTUtils.OTObject(OT_User_Pwd)
         pwdTF.leftImg = UIImage(named: "my_login_password")
         _ = pwdTF.sd_layout().centerXEqualToView(view)?.topSpaceToView(nameTF, 15)?.widthIs(view.bounds.size.width - 30)?.heightIs(45)
 
@@ -146,6 +147,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         attr.addAttributes([NSAttributedStringKey.foregroundColor: "376bfb".toUIColor(),
                             kCTUnderlineStyleAttributeName as NSAttributedStringKey: 1], range: range2)
         termsLbl.attributedText = attr
+        termsLbl.enabledTapEffect = false
         termsLbl.yb_addAttributeTapAction(with: textArr) { (string, range, index) in
             let url = URL(string: index == 0 ? "http://appc.o-trial.com:8888/usage-agreement.html": "http://appc.o-trial.com:8888/user-agreement.html")
             let web = OTWKWebController.init(url!)
@@ -193,13 +195,13 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         HttpHelper.Shared.Post(path: "/public/login", params: params as! Dictionary<String, String>, success: { (res) in
             OTUtils.LogOut(res)
             
-            let result = OTBaseModel(JSONString: res)
-            OTCenter.shared.token = result?.data as? String
+            let result = OTLoginModel(JSONString: res)
+            OTCenter.shared.token = result?.data
             if (result?.success)! {
                 DispatchQueue.main.async {
                     self.navigationController?.pushViewController(MyProjectVC(), animated: true)
-                    OTUtils.OTSetObject(self.nameTF.text!, OTPersistence.user_email)
-                    OTUtils.OTSetObject(self.pwdTF.text!, OTPersistence.user_pwd)                    
+                    OTUtils.OTSetObject(self.nameTF.text!, OT_User_Email)
+                    OTUtils.OTSetObject(self.pwdTF.text!, OT_User_Pwd)                    
                 }
             }
         }) { (error) in

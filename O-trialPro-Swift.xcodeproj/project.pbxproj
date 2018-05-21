@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7628D239C36F7C34B4EF14B0 /* Pods_O_trialPro_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */; };
+		C027576520B29C0E00A2B298 /* OTProjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027576420B29C0E00A2B298 /* OTProjectListCell.swift */; };
+		C027576720B2A20200A2B298 /* UITableViewCell+CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027576620B2A20200A2B298 /* UITableViewCell+CellHeight.swift */; };
 		C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */; };
 		C02E6C8720A174BD001D4963 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */; };
 		C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */; };
@@ -21,6 +23,7 @@
 		C0A9545A20AE87B1003497F5 /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9545920AE87B1003497F5 /* UIView+Category.swift */; };
 		C0A9545C20AEAD79003497F5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9545B20AEAD79003497F5 /* UIImage+Extension.swift */; };
 		C0A9546020AED1F2003497F5 /* MyProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9545F20AED1F2003497F5 /* MyProjectVC.swift */; };
+		C0A9546220B29033003497F5 /* OTProjectListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9546120B29033003497F5 /* OTProjectListModel.swift */; };
 		C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */; };
 		C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1620A562DD00188D3C /* HttpManager.swift */; };
 		C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */; };
@@ -43,6 +46,8 @@
 /* Begin PBXFileReference section */
 		541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_O_trialPro_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D746442B86130FE65D1879C /* Pods-O-trialPro-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-O-trialPro-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-O-trialPro-Swift/Pods-O-trialPro-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		C027576420B29C0E00A2B298 /* OTProjectListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTProjectListCell.swift; sourceTree = "<group>"; };
+		C027576620B2A20200A2B298 /* UITableViewCell+CellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CellHeight.swift"; sourceTree = "<group>"; };
 		C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		C02E6C9820A2C637001D4963 /* JMWhenTapped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTapped.h; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 		C0A9545920AE87B1003497F5 /* UIView+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
 		C0A9545B20AEAD79003497F5 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C0A9545F20AED1F2003497F5 /* MyProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectVC.swift; sourceTree = "<group>"; };
+		C0A9546120B29033003497F5 /* OTProjectListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTProjectListModel.swift; sourceTree = "<group>"; };
 		C0E3AC1220A55C5D00188D3C /* SHAEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAEncoder.h; sourceTree = "<group>"; };
 		C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAEncoder.m; sourceTree = "<group>"; };
 		C0E3AC1620A562DD00188D3C /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				C0E3AC1E20A9685F00188D3C /* NSString+Extensioin.swift */,
 				C0E3AC2220A9714000188D3C /* String+Extension.swift */,
 				C0A9545B20AEAD79003497F5 /* UIImage+Extension.swift */,
+				C027576620B2A20200A2B298 /* UITableViewCell+CellHeight.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -225,6 +232,7 @@
 		C0E3AC2620AA6A7A00188D3C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0A9546120B29033003497F5 /* OTProjectListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 		C0E3AC2720AA6A7A00188D3C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C027576420B29C0E00A2B298 /* OTProjectListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,6 +461,8 @@
 				C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */,
 				C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */,
 				C0E3AC2320A9714000188D3C /* String+Extension.swift in Sources */,
+				C027576520B29C0E00A2B298 /* OTProjectListCell.swift in Sources */,
+				C0A9546220B29033003497F5 /* OTProjectListModel.swift in Sources */,
 				C0E3AC2920AA6AAF00188D3C /* BaseViewController.swift in Sources */,
 				C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */,
 				C0314D4020AC2FA200317F0C /* OTWKWebController.swift in Sources */,
@@ -463,6 +474,7 @@
 				C0E9558A20A019740091908D /* AppDelegate.swift in Sources */,
 				C0E955AB20A029CC0091908D /* UIView+SDAutoLayout.m in Sources */,
 				C0E3AC1F20A9685F00188D3C /* NSString+Extensioin.swift in Sources */,
+				C027576720B2A20200A2B298 /* UITableViewCell+CellHeight.swift in Sources */,
 				C0E9559F20A01DEC0091908D /* LoginVC.swift in Sources */,
 				C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */,
 				C0E955AC20A029CC0091908D /* UITableView+SDAutoTableViewCellHeight.m in Sources */,

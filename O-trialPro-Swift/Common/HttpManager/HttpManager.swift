@@ -32,18 +32,36 @@ public class HttpHelper {
         
         let path = HttpHelper().checkPathHeader(path)
         
+        
         let url = URL(string: path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        var request = URLRequest.init(url: url!)
+        request.setValue("zh-CN,zh", forHTTPHeaderField: "Accept-Language")
+        request .setValue(OTCenter.shared.token, forHTTPHeaderField: "Token")
+        request.timeoutInterval = 10
         let session = URLSession.shared
         
-        let dataTask = session.dataTask(with: url!) { (data, respond, error) in
+        let dataTask = session.dataTask(with: request) { (data, respond, error) in
+            UIView.stopLoading()
             if let data = data {
-                if let result = String(data: data, encoding: .utf8) {
-                    success(result)
+                if let res = String(data: data, encoding: .utf8) {
+                    success(res)
+                } else {
+                    failure(error!)
                 }
             } else {
                 failure(error!)
             }
         }
+        
+//        let dataTask = session.dataTask(with: url!) { (data, respond, error) in
+//            if let data = data {
+//                if let result = String(data: data, encoding: .utf8) {
+//                    success(result)
+//                }
+//            } else {
+//                failure(error!)
+//            }
+//        }
         dataTask.resume()
     
     }
@@ -78,6 +96,7 @@ public class HttpHelper {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let dataTask = session.dataTask(with: request) { (data, respond, error) in
+            UIView.stopLoading()
             if let data = data {
                 
                 let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
@@ -91,7 +110,7 @@ public class HttpHelper {
                 failure(error!)
             }
             
-            UIView.stopLoading()
+            
         }
         dataTask.resume()
     }
@@ -100,7 +119,7 @@ public class HttpHelper {
     private func checkPathHeader(_ path: String) -> String {
         var path = path
         if !path.hasPrefix("http") {
-            path = OTNet.base_Url + path
+            path = base_Url + path
         }
         return path
     }

@@ -23,39 +23,32 @@ public let infoDictionary =  Bundle.main.infoDictionary
 public let shortVersion = infoDictionary!["CFBundleShortVersionString"]
 
 /// MARK    - 基本网址
-struct OTNet {
-    //  development
-    static let base_Url = "http://122.144.199.68:9002"
-//    //  distribution
-//    static let base_Url = "https://test.o-trial.com"
-}
+public let base_Url = "http://122.144.199.68:9002"  //  dev
+//    public let base_Url = "https://test.o-trial.com"  //  dis
 
 //  MARK:   - OTCOLOR
-struct OTColor {
-    static let Main_Bg = "#F8F8F8"   //  背景色
-    static let Light_Yellow = "#F3970E"    //  明黄色
-    static let Blue_Black = "#092948"  //  蓝黑色?
-    static let Blue_Light = "0594FF"    //  明蓝色
-    static let Cycn_Light = "3BB204"    //  亮青色
-    static let Title_Black = "333333"   //  标题黑
-    static let Content_Gray = "#5C5C57"    //  内容灰黑?
-    static let SubText_Gray = "#999999"    //  次级内容灰色?
-    static let Light_Gray = "#CCCCCC"  //  浅灰色?
-    static let Tiny_Gray = "#EEEEEE"   //  轻灰色
-}
+public let OT_Main_Bg = "#F8F8F8"   //  背景色
+public let OT_Light_Yellow = "#F3970E"    //  明黄色
+public let OT_Blue_Black = "#092948"  //  蓝黑色?
+public let OT_Blue_Light = "0594FF"    //  明蓝色
+public let OT_Cycn_Light = "3BB204"    //  亮青色
+public let OT_Title_Black = "333333"   //  标题黑
+public let OT_Content_Gray = "#5C5C57"    //  内容灰黑?
+public let OT_SubText_Gray = "#999999"    //  次级内容灰色?
+public let OT_Light_Gray = "#CCCCCC"  //  浅灰色?
+public let OT_Tiny_Gray = "#EEEEEE"   //  轻灰色
+
 
 //  MARK:   - 时间格式
-struct OTTimeFormat {
-    static let OTYear_Second = "yyyy-MM-dd HH:mm:ss"
-    static let OTYear_Day = "yyyy-MM-dd"
-    static let OTHour_Second = "HH:mm:ss"
-}
+public let OTFormat_YearSecond = "yyyy-MM-dd HH:mm:ss"
+public let OTFormat_YearDay = "yyyy-MM-dd"
+public let OTFormat_HourSecond = "HH:mm:ss"
+
 
 //  MARK:   - UserDefault持久化的值
-struct OTPersistence {
-    static let user_email = "user_emial"  //  用户名
-    static let user_pwd = "user_pwd"  //  密码
-}
+public let OT_User_Email = "user_emial"  //  用户名
+public let OT_User_Pwd = "user_pwd"  //  密码
+
 
 
 

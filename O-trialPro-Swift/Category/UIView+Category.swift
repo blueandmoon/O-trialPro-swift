@@ -67,7 +67,7 @@ extension UIView {
         keyWindow?.addSubview(maskV)
         maskV.backgroundColor = .clear
         
-        let animation = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80), type: NVActivityIndicatorType.ballSpinFadeLoader, color: OTColor.Light_Yellow.toUIColor(), padding: 0)
+        let animation = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80), type: NVActivityIndicatorType.ballSpinFadeLoader, color: OT_Light_Yellow.toUIColor(), padding: 0)
         animation.center = maskV.center
         maskV.addSubview(animation)
         animation.startAnimating()
