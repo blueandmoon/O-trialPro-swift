@@ -10,5 +10,9 @@
 #import<CommonCrypto/CommonDigest.h>
 
 @interface SHAEncoder : NSObject
+
+/**
+ 加密
+ */
 - (NSString *)getSha256String:(NSString *)srcString;
 @end

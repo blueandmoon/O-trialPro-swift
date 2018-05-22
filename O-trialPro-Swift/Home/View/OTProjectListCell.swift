@@ -13,7 +13,7 @@ class OTProjectListCell: UITableViewCell {
     var titleLbl: UILabel?
     var contentLbl: UILabel?
     var dateLbl: UILabel?
-    var model: ProjectModel? {
+    var model: OTProjectModel? {
         didSet {
             titleLbl?.text = model?.projectName
             contentLbl?.text = model?.projectNo
@@ -41,9 +41,6 @@ class OTProjectListCell: UITableViewCell {
     }
     
     func configUI() {
-//        self.contentView.layer.cornerRadius = 10
-//        self.contentView.clipsToBounds = true
-//        self.contentView.backgroundColor = OT_Main_Bg.toUIColor()
         self.contentView.backgroundColor = OT_Main_Bg.toUIColor()
         
         let bgView = UIView()

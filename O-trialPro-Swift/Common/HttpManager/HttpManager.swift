@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HandyJSON
 
 //typealias ClosureType = (String, String) -> Void
 
@@ -14,12 +15,6 @@ class HttpManager: NSObject {
 
 }
 
-struct Beer: Codable {
-    let success: String
-    let data: String
-    
-    
-}
 
 public class HttpHelper {
     
@@ -28,7 +23,7 @@ public class HttpHelper {
     public static var Shared = HttpHelper()
     
     //  MARK:   - GET
-    func Get(path: String, success: @escaping ((_ result: String) -> ()), failure: @escaping ((_ error: Error) ->())) {
+    func Get(path: String, params: Dictionary<String, Any>?, success: @escaping ((_ result: String, _ mes: String?) -> ()), failure: @escaping ((_ error: Error) ->())) {
         
         let path = HttpHelper().checkPathHeader(path)
         
@@ -38,13 +33,53 @@ public class HttpHelper {
         request.setValue("zh-CN,zh", forHTTPHeaderField: "Accept-Language")
         request .setValue(OTCenter.shared.token, forHTTPHeaderField: "Token")
         request.timeoutInterval = 10
+        
+        if let params = params {
+            for (key, value) in params {
+                request.setValue(value as? String, forHTTPHeaderField: key)
+            }
+        }
+        
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: request) { (data, respond, error) in
             UIView.stopLoading()
             if let data = data {
                 if let res = String(data: data, encoding: .utf8) {
-                    success(res)
+                    let obj = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! Dictionary<String, Any>
+                    success(res, obj["errorMessage"] as? String)
+                    if obj["success"] as! Bool {
+                        OTUtils.LogOut("成功啦")
+                    } else {
+                        OTUtils.LogOut("失败咧")
+                    }
+//                    let arr = LigenModel.mj_keyValuesArray(withObjectArray: obj["data"] as! [LigenModel])
+//                    OTUtils.LogOut(arr)
+                    
+                    if let pro = JSONDeserializer<ProjectMMM>.deserializeModelArrayFrom(json: res, designatedPath: "data") {
+                        OTUtils.LogOut(pro)
+                        let model = pro[0]
+                        OTUtils.LogOut(model?.vid)
+                        
+                        
+                    }
+                    
+                    
+                    
+//                    OTUtils.LogOut(obj["data"])
+//                    OTUtils.LogOut(obj)
+//
+//                    let decoder = JSONDecoder()
+//                    let stu = try! decoder.decode(BaseMode.self, from: data)
+////                    let testData = try! JSONSerialization.data(withJSONObject: obj["data"], options: .prettyPrinted)
+////                    let stu = try! decoder.decode(TestModel.self, from: testData)
+//                    let zdata = try! JSONSerialization.jsonObject(with: obj["data"], options: [])
+//                    OTUtils.LogOut(stu.errorMessage)
+                    
+                    
+                    
+                    
+                    
                 } else {
                     failure(error!)
                 }

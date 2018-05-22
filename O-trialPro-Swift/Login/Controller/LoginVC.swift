@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import HandyJSON
 //import NVActivityIndicatorView
 
 //为(_ num1: Int, _ num2: Int) -> (Int) 类型的闭包定义别名：Add
@@ -195,13 +196,15 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         HttpHelper.Shared.Post(path: "/public/login", params: params as! Dictionary<String, String>, success: { (res) in
             OTUtils.LogOut(res)
             
-            let result = OTLoginModel(JSONString: res)
-            OTCenter.shared.token = result?.data
-            if (result?.success)! {
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(MyProjectVC(), animated: true)
-                    OTUtils.OTSetObject(self.nameTF.text!, OT_User_Email)
-                    OTUtils.OTSetObject(self.pwdTF.text!, OT_User_Pwd)                    
+//            if let pro = JSONDeserializer<ProjectMMM>.deserializeModelArrayFrom(json: res, designatedPath: "data")
+            if let model = JSONDeserializer<OTLoginModel>.deserializeFrom(json: res) {
+                if model.success! {
+                    OTCenter.shared.token = model.data
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(MyProjectVC(), animated: true)
+                        OTUtils.OTSetObject(self.nameTF.text!, OT_User_Email)
+                        OTUtils.OTSetObject(self.pwdTF.text!, OT_User_Pwd)
+                    }
                 }
             }
         }) { (error) in

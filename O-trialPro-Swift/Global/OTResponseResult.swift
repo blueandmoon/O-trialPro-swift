@@ -8,12 +8,11 @@
 
 import UIKit
 
-struct OTNetInfo {
-    static let k_State_Code = "errorCode"
-    static let k_Error_Msg = "errorMessage"
-    static let k_Data = "data"
-    static let k_Success_State = "success"
-}
+public let k_State_Code = "errorCode"
+public let k_Error_Msg = "errorMessage"
+public let k_Data = "data"
+public let k_Success_State = "success"
+
 
 
 class OTResponseResult: NSObject {

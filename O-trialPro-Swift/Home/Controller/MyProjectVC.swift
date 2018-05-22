@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import HandyJSON
 
 class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
 
 //    let searchBar = UITextField(frame: CGRect(x: 0, y: 0, width: kScreenWidth - 80, height: 30))
     
     
-    var listArr = [ProjectModel]()
-    var originArr = [ProjectModel]()
+    var listArr = [OTProjectModel]()
+    var originArr = [OTProjectModel]()
     var listView: UITableView?
     
     
@@ -41,11 +42,13 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         searchBar.layer.cornerRadius = 15
         searchBar.clipsToBounds = true
         searchBar.delegate = self
+        searchBar.tintColor = OT_Content_Gray.toUIColor()    //  不设置, 光标不出现, 奇哉
         
         let searchField = searchBar.value(forKey: "searchField") as? UITextField
         searchField?.backgroundColor = .white
         searchField?.sd_cornerRadiusFromHeightRatio = NSNumber(value: 0.5)
         searchField?.clipsToBounds = true
+        searchField?.textColor = OT_Title_Black.toUIColor()
       
         for subview in searchBar.subviews {
             subview.layer.cornerRadius = 15
@@ -83,10 +86,6 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         return listArr.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat((self.tableView(tableView, cellForRowAt: indexPath).cellHeight?.floatValue)!)
     }
@@ -114,14 +113,21 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         return 0.01
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        OTCenter.shared.vid = listArr[indexPath.section].vid
+        OTCenter.shared.projectNo = listArr[indexPath.section].projectNo
+        OTCenter.shared.projectModel = listArr[indexPath.section]
+        getUseInfo()
+    }
+    
     //  MARK:   - UISearchBarDelegate
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        searchBar.endEditing(true)
-//        listArr = [ProjectModel]() + originArr
+        searchBar.endEditing(true)
+        listArr = [OTProjectModel]() + originArr
         listArr = originArr.filter({ (model) -> Bool in
             return (model.projectName! as NSString).contains(searchBar.text!) || (model.projectNo! as NSString).contains(searchBar.text!)
         })
@@ -138,7 +144,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         searchBar.text = nil
         searchBar.endEditing(true)
         searchBar.showsCancelButton = false
-        listArr = [ProjectModel]() + originArr
+        listArr = [OTProjectModel]() + originArr
         
         listView?.reloadData()
     }
@@ -148,19 +154,23 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     //  MARK:   - data
     func getProjectList() {
         UIView.startLoading()
-        HttpHelper.Shared.Get(path: "/userInfo/projects", success: { (jsonString) in
-            OTUtils.LogOut(jsonString)
-            let model = OTProjectListModel(JSONString: jsonString)
-            if (model?.success)! {
-                self.originArr = (model?.data)!
-                self.listArr = self.listArr + self.originArr
-//                let addr = String(format: "%p___%p", self.originArr, self.listArr)
-//                OTUtils.LogOut(addr)
-                DispatchQueue.main.async {
-                    self.listView?.reloadData()                    
-                }
-                
+        HttpHelper.Shared.Get(path: "/userInfo/projects", params: nil, success: { (jsonString, errorMessage) in
+//            OTUtils.LogOut(jsonString)
+            OTUtils.LogOut(errorMessage ?? "")
+            self.originArr = JSONDeserializer<OTProjectModel>.deserializeModelArrayFrom(json: jsonString, designatedPath: "data")! as! [OTProjectModel]
+            self.listArr = self.listArr + self.originArr
+            DispatchQueue.main.async {
+                self.listView?.reloadData()
             }
+        }) { (error) in
+            OTUtils.LogOut(error)
+        }
+    }
+    
+    func getUseInfo() {
+        HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/role", OTCenter.shared.vid!), params: nil, success: { (jsonString, errorMessage) in
+            OTUtils.LogOut(jsonString)
+            
             
             
         }) { (error) in
@@ -187,3 +197,6 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     */
 
 }
+
+
+

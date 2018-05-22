@@ -91,8 +91,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DGElasticPullToRefresh/DGElasticPullToRefresh.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/HandyJSON/HandyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YBAttributeTextTapAction/YBAttributeTextTapAction.framework"
@@ -100,8 +102,10 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DGElasticPullToRefresh/DGElasticPullToRefresh.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/HandyJSON/HandyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YBAttributeTextTapAction/YBAttributeTextTapAction.framework"
