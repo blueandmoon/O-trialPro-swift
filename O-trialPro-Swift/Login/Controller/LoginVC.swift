@@ -121,6 +121,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         loginBtn.setTitleColor(UIColor(hexString: "ffffff"), for: .normal)
         _ = loginBtn.sd_layout().leftEqualToView(nameTF)?.rightEqualToView(nameTF)?.topSpaceToView(pwdTF, 15)?.heightRatioToView(pwdTF, 1.0)
         loginBtn.addTarget(self, action: #selector(self.loginClick(_:)), for: .touchUpInside)
+        loginBtn.clickInterval = NSNumber(value: 1.0)
         loginBtn.didFinishAutoLayoutBlock = { (frame: CGRect) -> () in
             loginBtn.gradientLayerHorizontal("FF7F58".toUIColor(), "FDA21E".toUIColor())
         };
@@ -189,14 +190,15 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         let saltPwd = pwdTF.text! + salt
         let encoder = SHAEncoder()
         let encodedPass = encoder.getSha256String(encoder.getSha256String(saltPwd))
-//        OTUtils.LogOut(encodedPass)
         
         let params = ["email": nameTF.text!, "passWord": encodedPass]
         UIView.startLoading()
-        HttpHelper.Shared.Post(path: "/public/login", params: params as! Dictionary<String, String>, success: { (res) in
-            OTUtils.LogOut(res)
+        HttpHelper.Shared.Post(path: "/public/login", params: params as! Dictionary<String, String>, success: { (res, mes)  in
+            if mes != nil {
+                UIView.alertText(mes)
+                return
+            }
             
-//            if let pro = JSONDeserializer<ProjectMMM>.deserializeModelArrayFrom(json: res, designatedPath: "data")
             if let model = JSONDeserializer<OTLoginModel>.deserializeFrom(json: res) {
                 if model.success! {
                     OTCenter.shared.token = model.data

@@ -62,7 +62,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         
         listView = UITableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), style: .grouped)
         view.addSubview(listView!)
-        listView?.backgroundColor = OT_Main_Bg.toUIColor()
+//        listView?.backgroundColor = OT_Main_Bg.toUIColor()
         listView?.delegate = self
         listView?.dataSource = self
 //        listView?.register(OTProjectListCell.classForCoder(), forCellReuseIdentifier: "OTProjectListCell")
@@ -114,7 +114,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        OTCenter.shared.vid = listArr[indexPath.section].vid
+//        OTCenter.shared.vid = listArr[indexPath.section].vid
         OTCenter.shared.projectNo = listArr[indexPath.section].projectNo
         OTCenter.shared.projectModel = listArr[indexPath.section]
         getUseInfo()
@@ -154,9 +154,12 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     //  MARK:   - data
     func getProjectList() {
         UIView.startLoading()
-        HttpHelper.Shared.Get(path: "/userInfo/projects", params: nil, success: { (jsonString, errorMessage) in
-//            OTUtils.LogOut(jsonString)
-            OTUtils.LogOut(errorMessage ?? "")
+        HttpHelper.Shared.Get(path: "/userInfo/projects", params: nil, success: { (jsonString, mes) in
+            if mes != nil {
+                UIView.alertText(mes)
+                return
+            }
+            
             self.originArr = JSONDeserializer<OTProjectModel>.deserializeModelArrayFrom(json: jsonString, designatedPath: "data")! as! [OTProjectModel]
             self.listArr = self.listArr + self.originArr
             DispatchQueue.main.async {
@@ -167,17 +170,42 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         }
     }
     
+    //  获取用户个人信息
     func getUseInfo() {
-        HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/role", OTCenter.shared.vid!), params: nil, success: { (jsonString, errorMessage) in
-            OTUtils.LogOut(jsonString)
-            
-            
-            
+        HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/role", (OTCenter.shared.projectModel?.vid!)!), params: nil, success: { (jsonString, errorMessage) in
+            let userModel = JSONDeserializer<OTUserInfoModel>.deserializeFrom(json: jsonString, designatedPath: "data")
+            OTCenter.shared.vid = userModel?.vid
+            if OTCenter.shared.userType == 0 {
+                UIView.alertText(String(format: "您的账号在该项目中的角色为:%@ 没有登入权限", OTCenter.shared.vid!))
+            } else {
+                //  这里加友盟统计?
+                self.getSiteList()
+                
+            }
         }) { (error) in
             OTUtils.LogOut(error)
         }
     }
     
+    //  查询当前用户在项目中的可见中心列表
+    func getSiteList() {
+        
+        HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/sites", (OTCenter.shared.projectModel?.vid!)!), params: nil, success: { (jsonString, mes) in
+            OTUtils.LogOut(jsonString)
+            if mes != nil {
+                UIView.alertText(mes)
+                return
+            }
+            if let arr = JSONDeserializer<OTSiteModel>.deserializeModelArrayFrom(json: jsonString, designatedPath: "data") {
+                OTCenter.shared.siteArr = arr
+                
+            }
+            
+        }) { (error) in
+            OTUtils.LogOut(error)
+        }
+        
+    }
     
 
     override func didReceiveMemoryWarning() {

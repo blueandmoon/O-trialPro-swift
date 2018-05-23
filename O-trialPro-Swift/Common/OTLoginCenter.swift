@@ -16,7 +16,8 @@ public class OTCenter {
 
     var projectModel: OTProjectModel?
     var token: String?
-    var vid: String?
+    var vid: String?    //  角色, CRC, PM, CRA
+//    var projectVid: String? //  项目vid
     var userPass: String?
     var realName: String?
     var email: String?
@@ -29,6 +30,7 @@ public class OTCenter {
     var userNameWX: String?
     var projectCount: Int?
     var projectNo: String?
+    var siteArr: [OTSiteModel?]?
     var userType: Int? {
         get {
             if vid == "PM" || vid == "CRA" {

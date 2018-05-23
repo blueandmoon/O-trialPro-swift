@@ -27,6 +27,10 @@ extension UIView {
     
     @objc func viewWasTapped() {
         self.runBlockForKey(kWhenTappedBlockKey)
+        self.isUserInteractionEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { //  0.5s的点击事件间隔
+            self.isUserInteractionEnabled = true
+        }
     }
     
     

@@ -17,7 +17,7 @@ class OTUtils {
         let fileName = (file as NSString).lastPathComponent
         
         #if DEBUG
-        print("\(fileName.components(separatedBy: ".")[0])-\(line)_\(function):\(obj)")
+        print("\(fileName.components(separatedBy: ".")[0])-\(line)_\(function):   \(obj)")
         #endif
     }
     
@@ -41,18 +41,8 @@ class OTUtils {
     
     //  MARK:   -   加载动画
     static func startAnimationLoading() {
-        let window = UIApplication.shared.keyWindow
         
-        //  底层蒙版
-        let maskV = UIView(frame: (window?.bounds)!)
-        window?.addSubview(maskV)
-        maskV.backgroundColor = UIColor.purple
-        maskV.alpha = 0.3
-        maskV.whenTapped {
-            maskV.removeFromSuperview()
-        }
         
-//        let imgV = UIImageView
         
         
         

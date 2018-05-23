@@ -22,6 +22,11 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
+        
+        if (kIOSVersion!) < 11.0 {
+            self.navigationController?.automaticallyAdjustsScrollViewInsets = false
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
     }
     
     public func addBackItem() {
