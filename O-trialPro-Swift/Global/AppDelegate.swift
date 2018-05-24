@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes(attr, for: .normal)
         
         let loginVC = LoginVC()
-        let rootNav = UINavigationController.init(rootViewController: loginVC)
+        let rootNav = BaseNavigationController.init(rootViewController: loginVC)
         window?.rootViewController = rootNav
         
         

@@ -74,6 +74,7 @@ public class HttpHelper {
             }
             //用&拼接变成字符串的字典各项
             let paramStr = list.componentsJoined(by: "&")
+//            OTUtils.LogOut(String(format: "%@", paramStr))
             //UTF8转码，防止汉字符号引起的非法网址
             let paraData = paramStr.data(using: .utf8)
             //设置请求体
@@ -82,7 +83,7 @@ public class HttpHelper {
         
         request.setValue("zh-CN,zh", forHTTPHeaderField: "Accept-Language")
         request .setValue(OTCenter.shared.token, forHTTPHeaderField: "Token")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")  //  设置了不太对, 登录不了了
         request.timeoutInterval = 10
         
         let config = URLSessionConfiguration.default

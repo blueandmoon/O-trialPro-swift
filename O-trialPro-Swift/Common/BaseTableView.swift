@@ -18,10 +18,23 @@ class BaseTableView: UITableView {
             // Fallback on earlier versions
         }
         
+        self.separatorStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func reloadData() {
+        if !Thread.isMainThread {
+            DispatchQueue.main.async {
+//                self.reloadData()
+                super.reloadData()
+            }
+        } else {
+            super.reloadData()
+        }
+        
     }
     
 }

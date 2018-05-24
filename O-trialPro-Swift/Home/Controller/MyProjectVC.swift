@@ -16,7 +16,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     
     var listArr = [OTProjectModel]()
     var originArr = [OTProjectModel]()
-    var listView: UITableView?
+    var listView: BaseTableView?
     
     
     
@@ -60,9 +60,9 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
             }
         }
         
-        listView = UITableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), style: .grouped)
+        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), style: .grouped)
         view.addSubview(listView!)
-//        listView?.backgroundColor = OT_Main_Bg.toUIColor()
+        listView?.backgroundColor = OT_Main_Bg.toUIColor()
         listView?.delegate = self
         listView?.dataSource = self
 //        listView?.register(OTProjectListCell.classForCoder(), forCellReuseIdentifier: "OTProjectListCell")
@@ -162,9 +162,9 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
             
             self.originArr = JSONDeserializer<OTProjectModel>.deserializeModelArrayFrom(json: jsonString, designatedPath: "data")! as! [OTProjectModel]
             self.listArr = self.listArr + self.originArr
-            DispatchQueue.main.async {
-                self.listView?.reloadData()
-            }
+            self.listView?.reloadData()
+//            DispatchQueue.main.async {
+//            }
         }) { (error) in
             OTUtils.LogOut(error)
         }
@@ -191,13 +191,16 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     func getSiteList() {
         
         HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/sites", (OTCenter.shared.projectModel?.vid!)!), params: nil, success: { (jsonString, mes) in
-            OTUtils.LogOut(jsonString)
+//            OTUtils.LogOut(jsonString)
             if mes != nil {
                 UIView.alertText(mes)
                 return
             }
             if let arr = JSONDeserializer<OTSiteModel>.deserializeModelArrayFrom(json: jsonString, designatedPath: "data") {
                 OTCenter.shared.siteArr = arr
+                DispatchQueue.main.async {
+                    keyWindow?.rootViewController = BaseTabbarController.root
+                }
                 
             }
             
