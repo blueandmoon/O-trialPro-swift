@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// MARK    - 基本网址
+public let base_Url = "http://122.144.199.68:9002"  //  dev
+//    public let base_Url = "https://test.o-trial.com"  //  dis
+
+
 //  MARK: - 常用全局变量
 
 public let kScreenWidth = UIScreen.main.bounds.width
@@ -22,9 +27,10 @@ public let keyWindow = UIApplication.shared.keyWindow
 public let infoDictionary =  Bundle.main.infoDictionary
 public let shortVersion = infoDictionary!["CFBundleShortVersionString"]
 
-/// MARK    - 基本网址
-public let base_Url = "http://122.144.199.68:9002"  //  dev
-//    public let base_Url = "https://test.o-trial.com"  //  dis
+
+//  MARK:   - 图片
+/// 头像占位图
+public let kPlaceholderImg_header = UIImage(named: "mine_headphoto_default")
 
 //  MARK:   - OTCOLOR
 public let OT_Main_Bg = "#F8F8F8"   //  背景色

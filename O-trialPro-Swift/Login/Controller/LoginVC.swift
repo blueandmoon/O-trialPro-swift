@@ -64,7 +64,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white;
-        UIApplication.shared.isStatusBarHidden = true
+//        UIApplication.shared.isStatusBarHidden = true
 //        self.navigationController?.navigationBar.isHidden =  true
 //
         
@@ -95,7 +95,8 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         let logo = UIImage(named: "my_login_logo")
         let logoIV = UIImageView(image: logo)
         view.addSubview(logoIV)
-        _ = logoIV.sd_layout().centerXEqualToView(view)?.topSpaceToView(view, (logo?.size.height)!)?.widthIs((logo?.size.width)!)?.heightIs(120)
+//        logoIV.layer.borderWidth = 1
+        _ = logoIV.sd_layout().centerXEqualToView(view)?.topSpaceToView(view, 80)?.widthIs((logo?.size.width)! * 1.5)?.heightIs((logo?.size.height)! * 1.5)
         
         nameTF = OTLoginTextField()
         view.addSubview(nameTF)
@@ -103,7 +104,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         nameTF.text = OTUtils.OTObject(OT_User_Email
         )
         nameTF.leftImg = UIImage(named: "my_login_user")
-        _ = nameTF.sd_layout().centerXEqualToView(view)?.topSpaceToView(logoIV, 80)?.widthIs(view.bounds.size.width - 30)?.heightIs(45)
+        _ = nameTF.sd_layout().centerXEqualToView(view)?.topSpaceToView(logoIV, 60)?.widthIs(view.bounds.size.width - 30)?.heightIs(45)
         
         pwdTF = OTLoginTextField()
         view.addSubview(pwdTF)
@@ -202,15 +203,20 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
             if let model = JSONDeserializer<OTLoginModel>.deserializeFrom(json: res) {
                 if model.success! {
                     OTCenter.shared.token = model.data
+                    let vc = MyProjectVC(); self.navigationController?.pushViewController(vc, animated: true)
+                    vc.logOut = {
+                        OTUtils.LogOut("ddddddd")
+                    }
                     DispatchQueue.main.async {
-                        self.navigationController?.pushViewController(MyProjectVC(), animated: true)
                         OTUtils.OTSetObject(self.nameTF.text!, OT_User_Email)
                         OTUtils.OTSetObject(self.pwdTF.text!, OT_User_Pwd)
                     }
+                    
                 }
             }
         }) { (error) in
             OTUtils.LogOut(error)
+            UIView.alertText(error.localizedDescription)
         }
     }
     

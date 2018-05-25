@@ -24,7 +24,14 @@ class BaseNavigationController: UINavigationController {
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        super.pushViewController(viewController, animated: animated)
+        if !Thread.isMainThread {
+            DispatchQueue.main.async {
+                super.pushViewController(viewController, animated: animated)
+                return
+            }
+        } else {
+            super.pushViewController(viewController, animated: animated)            
+        }
     }
     
 

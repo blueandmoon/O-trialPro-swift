@@ -18,7 +18,8 @@ class BaseTabbarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         let arr = [["title": "首页",
                     "class": HomeVC(),
                     "img": "tab_home_normal",

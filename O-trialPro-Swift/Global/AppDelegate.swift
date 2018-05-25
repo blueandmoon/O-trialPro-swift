@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = LoginVC();
         window?.makeKeyAndVisible()
+        UIApplication.shared.statusBarStyle = .lightContent
         
         let attr = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: UIColor.white]
         UIBarButtonItem.appearance().setTitleTextAttributes(attr, for: .normal)

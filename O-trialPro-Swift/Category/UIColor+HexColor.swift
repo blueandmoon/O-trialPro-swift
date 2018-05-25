@@ -16,21 +16,15 @@ class UIColor_HexColor: UIColor {
 
 extension UIColor {
     
-    convenience init(hexString:String) {
+    convenience init(hexString: String) {
+        self.init(hexString: hexString, alpha: 1.0)
+//        UIColor(hexString: hexString, alpha: 1.0)
+    }
+    
+    convenience init(hexString:String, alpha: CGFloat) {
         //  处理数值
         var cString = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        
-//        let length = (cString as NSString).length
-        //  错误处理
-//        if (length < 6 || length > 7 || (!cString.hasPrefix("#") && length == 7)) {
-//            //  返回whiteColor
-//            self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-//            return
-//        }
-//
-//        if cString.hasPrefix("#") {
-//            cString = (cString as NSString).substring(from: 1)
-//        }
+
         if cString.hasPrefix("0x") {
             cString = (cString as NSString).substring(from: 2)
         } else if cString.hasPrefix("#") {
@@ -61,14 +55,18 @@ extension UIColor {
         Scanner(string: gString).scanHexInt32(&g)
         Scanner(string: bString).scanHexInt32(&b)
         //  根据颜色值穿件UIColor
-        self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
+        self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
     }
+    
+    
     
     
     
 }
 
 extension String{
+    
+    
     /// 将十六进制颜色转伟UIColor
     /// - Returns: UIColor
     public func toUIColor() -> UIColor {
@@ -113,6 +111,12 @@ extension String{
         //根据颜色值创建UIColor
         return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
     }
+    
+    
+    
+    
+    
+    
 }
 
 

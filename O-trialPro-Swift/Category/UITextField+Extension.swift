@@ -33,6 +33,20 @@ class UITextField_Extension: UITextField {
     }
     
     
+//    override var text: String? {
+//        set {
+//        }
+//        get {
+//            if Thread.isMainThread {
+//                return super.text
+//            } else {
+//                DispatchQueue.main.async {
+//                    return super.text
+//                }
+//            }
+//            return super.text
+//        }
+//    }
 
 }
 

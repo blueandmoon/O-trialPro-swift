@@ -58,16 +58,7 @@ class OTUtils {
         }
     }
     
-    //  MARK:   - 加tap手势
-    func addTap(_ handler: (()->())) {
-        
-        //        let tap = UITapGestureRecognizer(target: self, action: #selector(handler))
-        
-        OTUtils.LogOut("哈哈哈哈")
-        if handler != nil {
-            handler()
-        }
-    }
+    
     
     
     

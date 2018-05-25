@@ -12,12 +12,15 @@ class OTMineCell: BaseTableViewCell {
 
     var leftIV: UIImageView?
     var contentLbl: UILabel?
+    var topLine: UIView?
+    var bottomLine: UIView?
     var model: OTMineModel? {
         didSet {
             leftIV?.image = UIImage(named: (model?.img)!)
             contentLbl?.text = model?.title
         }
     }
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,7 +56,17 @@ class OTMineCell: BaseTableViewCell {
         contentView.addSubview(contentLbl!)
         _ = contentLbl?.sd_layout().leftSpaceToView(leftIV, 5)?.rightSpaceToView(arrowIV, 5)?.centerYEqualToView(contentView)?.heightIs(20)
         
+        topLine = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 0.7))
+        contentView.addSubview(topLine!)
+        topLine?.isHidden = true
+        topLine?.backgroundColor = "dddddd".toUIColor()
+
+        bottomLine = UIView(frame: CGRect(x: 0, y: contentView.ot_hei - 1, width: kScreenWidth, height: 0.7))
+        contentView.addSubview(bottomLine!)
+        bottomLine?.isHidden = true
+        bottomLine?.backgroundColor = "dddddd".toUIColor()
         
+        self.cellHeight = NSNumber(value: 50)
     }
     
     

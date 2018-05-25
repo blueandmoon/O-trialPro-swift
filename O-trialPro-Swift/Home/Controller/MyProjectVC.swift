@@ -17,7 +17,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     var listArr = [OTProjectModel]()
     var originArr = [OTProjectModel]()
     var listView: BaseTableView?
-    
+    var logOut: (() -> ())?
     
     
     //  MARK:   - viewDidLoad
@@ -29,7 +29,16 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         
         self.getProjectList()
         
+       
         
+    }
+    
+    override func backClick(_ backItem: UIBarButtonItem) {
+        super.backClick(backItem)
+        OTUtils.LogOut("返回登录")
+        if self.logOut != nil {
+            self.logOut!()
+        }
     }
     
     

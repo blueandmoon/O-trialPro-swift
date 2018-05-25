@@ -31,6 +31,8 @@
 		C02E6CB220A4219B001D4963 /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = C02E6CB120A4219B001D4963 /* load.gif */; };
 		C0314D4020AC2FA200317F0C /* OTWKWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */; };
 		C03E8A7B20B6C75300850D1F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8A7A20B6C75300850D1F /* BaseTableViewCell.swift */; };
+		C03E8A7D20B7A38000850D1F /* WaterWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8A7C20B7A38000850D1F /* WaterWaveView.swift */; };
+		C03E8A7F20B7F63100850D1F /* OTMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8A7E20B7F63100850D1F /* OTMineHeaderView.swift */; };
 		C0A9545A20AE87B1003497F5 /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9545920AE87B1003497F5 /* UIView+Category.swift */; };
 		C0A9545C20AEAD79003497F5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9545B20AEAD79003497F5 /* UIImage+Extension.swift */; };
 		C0A9546020AED1F2003497F5 /* MyProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9545F20AED1F2003497F5 /* MyProjectVC.swift */; };
@@ -87,6 +89,8 @@
 		C02E6CB120A4219B001D4963 /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
 		C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTWKWebController.swift; sourceTree = "<group>"; };
 		C03E8A7A20B6C75300850D1F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		C03E8A7C20B7A38000850D1F /* WaterWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveView.swift; sourceTree = "<group>"; };
+		C03E8A7E20B7F63100850D1F /* OTMineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTMineHeaderView.swift; sourceTree = "<group>"; };
 		C0A9545920AE87B1003497F5 /* UIView+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
 		C0A9545B20AEAD79003497F5 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C0A9545F20AED1F2003497F5 /* MyProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectVC.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				C0CC724920B69E4800EB51D8 /* OTMineCell.swift */,
+				C03E8A7C20B7A38000850D1F /* WaterWaveView.swift */,
+				C03E8A7E20B7F63100850D1F /* OTMineHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 				C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */,
 				C027578620B56B8B00A2B298 /* BaseTabbarController.swift in Sources */,
 				C03E8A7B20B6C75300850D1F /* BaseTableViewCell.swift in Sources */,
+				C03E8A7F20B7F63100850D1F /* OTMineHeaderView.swift in Sources */,
 				C0A9546020AED1F2003497F5 /* MyProjectVC.swift in Sources */,
 				C0E3AC1720A562DD00188D3C /* HttpManager.swift in Sources */,
 				C0E3AC1420A55C5E00188D3C /* SHAEncoder.m in Sources */,
@@ -654,6 +661,7 @@
 				C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */,
 				C0A9545C20AEAD79003497F5 /* UIImage+Extension.swift in Sources */,
 				C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */,
+				C03E8A7D20B7A38000850D1F /* WaterWaveView.swift in Sources */,
 				C0E3AC1D20A955E600188D3C /* OTLoginTextField.swift in Sources */,
 				C02E6C8720A174BD001D4963 /* UITextField+Extension.swift in Sources */,
 				C0E9558A20A019740091908D /* AppDelegate.swift in Sources */,

@@ -19,6 +19,8 @@ class BaseTableView: UITableView {
         }
         
         self.separatorStyle = .none
+        self.showsVerticalScrollIndicator = false
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,7 +30,6 @@ class BaseTableView: UITableView {
     override func reloadData() {
         if !Thread.isMainThread {
             DispatchQueue.main.async {
-//                self.reloadData()
                 super.reloadData()
             }
         } else {
@@ -36,5 +37,9 @@ class BaseTableView: UITableView {
         }
         
     }
+    
+    
+    
+    
     
 }

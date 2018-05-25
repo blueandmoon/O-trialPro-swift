@@ -44,9 +44,9 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string></string>
+		<string>我的项目</string>
 		<key>img</key>
-		<string></string>
+		<string>my_project</string>
 		<key>items</key>
 		<array/>
 	</dict>
