@@ -35,7 +35,6 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     
     override func backClick(_ backItem: UIBarButtonItem) {
         super.backClick(backItem)
-        OTUtils.LogOut("返回登录")
         if self.logOut != nil {
             self.logOut!()
         }

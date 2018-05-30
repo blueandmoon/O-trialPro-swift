@@ -17,39 +17,27 @@ extension String {
         return (self as NSString).getTextSize(font, constrainSize).height
     }
     
-//    //  MARK:   - Range 与 NSRange转换
-//    //range转换为NSRange
-//    
-//    //扩展的是String类，不可改为NSRange或者Range的扩展，因为samePosition，utf16是String里的
-//    func nsRange(from range: Range<String.Index>) -> NSRange {
-//        
-//        let from = range.lowerBound.samePosition(in: utf16)
-//        
-//        let to = range.upperBound.samePosition(in: utf16)
-//        
-//        return NSRange(location: utf16.distance(from: utf16.startIndex, to: from), length: utf16.distance(from: from, to: to))
-////        return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
-////
-////                       length: utf16.distance(from: from, to: to))
-//        
+//    init(str: String) {
+//        let key = OTUtils.OTObject(OT_Language_key)
+//        if key == "1" {
+//            OTUtils.LogOut("...")
+//
+//        }
+//        let dicPath = Bundle.main.path(forResource: "En_LanguageList", ofType: "plist")
+//        let dic = NSDictionary(contentsOfFile: dicPath!) as! Dictionary<String, Any>
+//
+////        self.init()
 //    }
-//    
-//    //  NSRange转为Range
-//    //扩展的是String类，不可改为NSRange或者Range的扩展，因为utf16是String里的
-//    
-//    func range(from nsRange: NSRange) -> Range<String.Index>? {
-//        guard
-//            let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
-//            let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex),
-//            let from = String.Index(from16, within: self),
-//            
-//            let to = String.Index(to16, within: self)
-//            
-//            else { return nil }
-//        
-//        return from ..< to
-//        
-//    }
+    
+    /// 国际化
+    ///
+    /// - Returns: 返回对应的字符串
+    public func inter_String() -> String? {
+        let key = OTUtils.OTObject(OT_Language_key)
+        let dicPath = Bundle.main.path(forResource: "En_LanguageList", ofType: "plist")
+        let dic = NSDictionary(contentsOfFile: dicPath!) as! Dictionary<String, Any>
+        return key == "1" ? dic[self] as! String : self
+    }
     
     
 }

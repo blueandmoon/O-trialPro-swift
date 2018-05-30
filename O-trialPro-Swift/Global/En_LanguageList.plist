@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>项目详情</key>
+	<string>programDetail</string>
+	<key>所有中心</key>
+	<string>all</string>
+	<key>受试者代码</key>
+	<string>code</string>
+	<key>受试者例数</key>
+	<string>patientAmount</string>
+	<key>治疗领域</key>
+	<string>therapyArea</string>
+	<key>实验阶段</key>
+	<string>trialStage</string>
+	<key>研究类型</key>
+	<string>researchType</string>
+	<key>开始时间</key>
+	<string>startTime</string>
+	<key>创建时间</key>
+	<string>creatTime</string>
+	<key>申办方</key>
+	<string>applicant</string>
+	<key>创建者</key>
+	<string>creater</string>
+	<key>项目编号</key>
+	<string>projectNo</string>
+	<key>项目名称</key>
+	<string>projectName</string>
+	<key>中心列表</key>
+	<string>sitelist</string>
+	<key>机构</key>
+	<string>site</string>
+	<key>已处理</key>
+	<string>acted</string>
+	<key>待处理</key>
+	<string>wait </string>
+	<key>再次刷新</key>
+	<string>refersh again</string>
+	<key>已下载文件</key>
+	<string>download files</string>
+	<key>文件列表</key>
+	<string>file list</string>
+	<key>跳过原因</key>
+	<string>skip reason</string>
+	<key>检查项描述</key>
+	<string>form desc</string>
+	<key>该检查项暂无描述</key>
+	<string>form descrption is empty</string>
+	<key>编辑受试者</key>
+	<string>edit subject</string>
+	<key>添加额外检查项</key>
+	<string>add exForm</string>
+	<key>相关机构</key>
+	<string>sites</string>
+	<key>公共直播室</key>
+	<string>open live</string>
+	<key>修改密码</key>
+	<string>modifyPwd</string>
+	<key>修改</key>
+	<string>modify</string>
+	<key>提交</key>
+	<string>update</string>
+	<key>添加受试者</key>
+	<string>addSubject</string>
+	<key>详情</key>
+	<string>details</string>
+	<key>来源</key>
+	<string>source</string>
+	<key>备注</key>
+	<string>mark</string>
+	<key>科室</key>
+	<string>department</string>
+	<key>中心</key>
+	<string>site</string>
+	<key>身份证号码</key>
+	<string>ID</string>
+	<key>紧急联系人2</key>
+	<string>emContact2</string>
+	<key>紧急联系人1</key>
+	<string>emContact</string>
+	<key>电话</key>
+	<string>mobile</string>
+	<key>姓名</key>
+	<string>name</string>
+	<key>编号</key>
+	<string>code</string>
+	<key>请填写</key>
+	<string>pleace writ</string>
+	<key>已死亡</key>
+	<string>death</string>
+	<key>确认</key>
+	<string>makeSure</string>
+	<key>关闭</key>
+	<string>close</string>
+	<key>添加成功</key>
+	<string>add Success</string>
+	<key>添加失败</key>
+	<string>add Failed</string>
+	<key>添加总结报告</key>
+	<string>endReport</string>
+	<key>添加随访报告</key>
+	<string>normalReport</string>
+	<key>添加报告</key>
+	<string>report</string>
+	<key>文件数</key>
+	<string>files</string>
+	<key>跳过访视</key>
+	<string>skip visit</string>
+	<key>添加撤销知情</key>
+	<string>add WithDraICF</string>
+	<key>添加失联</key>
+	<string>add LostFollow</string>
+	<key>添加PD</key>
+	<string>add PD</string>
+	<key>添加EOT</key>
+	<string>add EOT</string>
+	<key>添加EOS</key>
+	<string>add EOS</string>
+	<key>预览</key>
+	<string>preview</string>
+	<key>编辑</key>
+	<string>edit</string>
+	<key>实际日期</key>
+	<string>actullyDate</string>
+	<key>计划日期</key>
+	<string>planDate</string>
+	<key>此访视跳过</key>
+	<string>skipvisit</string>
+	<key>此访视不做</key>
+	<string>skip</string>
+	<key>受试者数</key>
+	<string>subjectNumber</string>
+	<key>保存</key>
+	<string>save</string>
+	<key>计划</key>
+	<string>plan</string>
+	<key>实际</key>
+	<string>actual</string>
+	<key>跳过</key>
+	<string>skip</string>
+	<key>切换语言</key>
+	<string>change language</string>
+	<key>请输入事件名称</key>
+	<string>enter event name</string>
+	<key>添加额外表单</key>
+	<string>add exFrom</string>
+	<key>标记死亡</key>
+	<string>markDeath</string>
+	<key>添加额外访视</key>
+	<string>add exVisit</string>
+	<key>添加SAE</key>
+	<string>addSAE</string>
+	<key>添加AE</key>
+	<string>addAE</string>
+	<key>标记脱落</key>
+	<string>markDrop</string>
+	<key>结束访视</key>
+	<string>finishVisit</string>
+	<key>开始访视</key>
+	<string>startVisit</string>
+	<key>更多操作</key>
+	<string>option</string>
+	<key>计划项</key>
+	<string>plant count</string>
+	<key>已完成项</key>
+	<string>complete count</string>
+	<key>异常事件</key>
+	<string>events</string>
+	<key>当前进度</key>
+	<string>currentVisit</string>
+	<key>访视进度</key>
+	<string>progress</string>
+	<key>SDV</key>
+	<string>SDV</string>
+	<key>完成人数</key>
+	<string>complete</string>
+	<key>SAE</key>
+	<string>SAE</string>
+	<key>AE</key>
+	<string>AE</string>
+	<key>额外访视</key>
+	<string>exVisit</string>
+	<key>超窗人数</key>
+	<string>out </string>
+	<key>EOT</key>
+	<string>EOT</string>
+	<key>死亡人数</key>
+	<string>death</string>
+	<key>失联人数</key>
+	<string>lost</string>
+	<key>随机人数</key>
+	<string>random</string>
+	<key>筛选人数</key>
+	<string>screening</string>
+	<key>新增PD人数</key>
+	<string>today PD count</string>
+	<key>新增脱落人数</key>
+	<string>today drop count</string>
+	<key>新增SAE事件数</key>
+	<string>today SAE count</string>
+	<key>新增人数</key>
+	<string>today add count</string>
+	<key>实际结束访视人数</key>
+	<string>today ended visit</string>
+	<key>实际开始访视人数</key>
+	<string>today begining visit</string>
+	<key>计划访视人数</key>
+	<string>today planted visit</string>
+	<key>预约访视人数</key>
+	<string>reserved visit</string>
+	<key>待回复</key>
+	<string>unanswere</string>
+	<key>已回复</key>
+	<string>replied</string>
+	<key>关注点</key>
+	<string>focus</string>
+	<key>结束</key>
+	<string>finish</string>
+	<key>开始</key>
+	<string>begin</string>
+	<key>未知</key>
+	<string>unknow</string>
+	<key>阶段</key>
+	<string>stage</string>
+	<key>分组</key>
+	<string>groups</string>
+	<key>全部</key>
+	<string>all</string>
+	<key>提交处理</key>
+	<string>commit</string>
+	<key>重新登陆</key>
+	<string>ReLogin</string>
+	<key>请输入质疑信息</key>
+	<string>please enter query message</string>
+	<key>质疑</key>
+	<string>query</string>
+	<key>添加</key>
+	<string>add</string>
+	<key>筛选范围</key>
+	<string>screeningRange</string>
+	<key>日历</key>
+	<string>calendar</string>
+	<key>密码</key>
+	<string>password</string>
+	<key>用户名</key>
+	<string>userName</string>
+	<key>切换项目</key>
+	<string>change project</string>
+	<key>发送消息</key>
+	<string>send</string>
+	<key>我发出的</key>
+	<string>sent</string>
+	<key>系统消息</key>
+	<string>system</string>
+	<key>提前退出</key>
+	<string>eot</string>
+	<key>筛选失败</key>
+	<string>scrFailed</string>
+	<key>失联</key>
+	<string>lostFollow</string>
+	<key>撤销知情</key>
+	<string>revoke</string>
+	<key>访视结束</key>
+	<string>finished</string>
+	<key>正常</key>
+	<string>normal</string>
+	<key>发送</key>
+	<string>send</string>
+	<key>请输入标题</key>
+	<string>title</string>
+	<key>接收人</key>
+	<string>receiver</string>
+	<key>脱落</key>
+	<string>drop</string>
+	<key>死亡</key>
+	<string>death</string>
+	<key>检查项</key>
+	<string>checkItem</string>
+	<key>计划访视</key>
+	<string>planVisit</string>
+	<key>已跳过</key>
+	<string>skiped</string>
+	<key>已关闭</key>
+	<string>closed</string>
+	<key>已结束</key>
+	<string>finished</string>
+	<key>进行中</key>
+	<string>ongoing</string>
+	<key>未开始</key>
+	<string>notStart</string>
+	<key>受试者库</key>
+	<string>subjects_library</string>
+	<key>我的项目</key>
+	<string>my_project</string>
+	<key>意见反馈</key>
+	<string>feedback</string>
+	<key>设置</key>
+	<string>setting</string>
+	<key>受试者</key>
+	<string>subjects</string>
+	<key>我的</key>
+	<string>mine</string>
+	<key>统计</key>
+	<string>statistics</string>
+	<key>消息</key>
+	<string>message</string>
+	<key>首页</key>
+	<string>home</string>
+	<key>登录</key>
+	<string>login</string>
+	<key>我的协议</key>
+	<string>my protocol</string>
+	<key>新手指引</key>
+	<string>novice guidelines</string>
+	<key>关于我们</key>
+	<string>about us</string>
+	<key>关于O-trial</key>
+	<string>about O-trial</string>
+	<key>工时薄</key>
+	<string>time sheet</string>
+	<key>+ 预约</key>
+	<string>reserve</string>
+	<key>√已预约</key>
+	<string>reserved</string>
+	<key>ICF时间</key>
+	<string>ICF time</string>
+	<key>预约时间</key>
+	<string>reserved time</string>
+	<key>退出登录</key>
+	<string>sign out</string>
+	<key>用户注册及APP使用协议</key>
+	<string>Registration and APP Usage Agreement</string>
+	<key>最终用户使用协议 (方案)</key>
+	<string>End-user use agreement (plan)</string>
+	<key>计划日</key>
+	<string>plan</string>
+	<key>已开始</key>
+	<string>started</string>
+	<key>有预约</key>
+	<string>reserved</string>
+	<key>名字</key>
+	<string>name</string>
+	<key>时间</key>
+	<string>time</string>
+	<key>医院</key>
+	<string>hospital</string>
+	<key>请输入</key>
+	<string>please enter the </string>
+	<key>确定</key>
+	<string>confirm</string>
+	<key>取消</key>
+	<string>cancel</string>
+	<key>取消预约</key>
+	<string>cancel</string>
+	<key>添加备注</key>
+	<string>add remark</string>
+	<key>请选择</key>
+	<string>please select</string>
+	<key>日期</key>
+	<string>date</string>
+	<key>软件版本</key>
+	<string>app version</string>
+	<key>版本</key>
+	<string>version</string>
+	<key>管理员电话</key>
+	<string>manager phone</string>
+	<key>请输入原始密码</key>
+	<string>please enter old password</string>
+	<key>请输入新密码</key>
+	<string>please enter new password</string>
+	<key>请再次输入新密码</key>
+	<string>please enter new password again</string>
+	<key>知情同意日期</key>
+	<string>informed consent date</string>
+	<key>绑定微信</key>
+	<string>bind wechat</string>
+	<key>解绑微信</key>
+	<string>unbind wechat</string>
+	<key>已绑定微信</key>
+	<string>bound wechat</string>
+	<key>受试者总数</key>
+	<string>total subjects</string>
+	<key>总数</key>
+	<string>total</string>
+</dict>
+</plist>

@@ -28,6 +28,7 @@ public let infoDictionary =  Bundle.main.infoDictionary
 public let shortVersion = infoDictionary!["CFBundleShortVersionString"]
 
 
+
 //  MARK:   - 图片
 /// 头像占位图
 public let kPlaceholderImg_header = UIImage(named: "mine_headphoto_default")
@@ -54,7 +55,7 @@ public let OTFormat_HourSecond = "HH:mm:ss"
 //  MARK:   - UserDefault持久化的值
 public let OT_User_Email = "user_emial"  //  用户名
 public let OT_User_Pwd = "user_pwd"  //  密码
-
+public let OT_Language_key = "enableEng"    //  国际化key值
 
 
 

@@ -57,12 +57,34 @@ class MineVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.tableView(tableView, cellForRowAt: indexPath).cellHeight?.floatValue as! CGFloat
+        let cell = self.tableView(tableView, cellForRowAt: indexPath)
+        return cell.cellHeight as! CGFloat
     }
     
     
     //  MARK:   - event
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {   //  切换语言
+//            if OTUtils.OTObject(OT_Language_key) == "1" {
+//                OTUtils.OTSetObject("0", OT_Language_key)
+//            } else {
+//                OTUtils.OTSetObject("1", OT_Language_key)
+//            }
+//            BaseTabbarController.shared.reBuildControllers()
+//        }
+        let model = list?[indexPath.row];
+        switch model?.title {
+        case "工时薄":
+            OTUtils.LogOut(model?.title)
+            let webVC = OTWKWebController.init(URL(string: String(format: "%@/timesheet/my", base_Url))!)
+            BaseTabbarController.root.pushViewController(webVC, true)
+            break
+            
+            
+        default:
+            return
+        }
+        
         
     }
     

@@ -10,7 +10,6 @@
 		7628D239C36F7C34B4EF14B0 /* Pods_O_trialPro_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */; };
 		C027576520B29C0E00A2B298 /* OTProjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027576420B29C0E00A2B298 /* OTProjectListCell.swift */; };
 		C027576720B2A20200A2B298 /* UITableViewCell+CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027576620B2A20200A2B298 /* UITableViewCell+CellHeight.swift */; };
-		C027576920B3B5F300A2B298 /* OTUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027576820B3B5F300A2B298 /* OTUserInfoModel.swift */; };
 		C027577320B405D500A2B298 /* OTLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027577220B405D500A2B298 /* OTLoginModel.swift */; };
 		C027577520B40A0F00A2B298 /* OTProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027577420B40A0F00A2B298 /* OTProjectModel.swift */; };
 		C027577720B40BB900A2B298 /* OTBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027577620B40BB900A2B298 /* OTBaseModel.swift */; };
@@ -30,6 +29,8 @@
 		C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */; };
 		C02E6CB220A4219B001D4963 /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = C02E6CB120A4219B001D4963 /* load.gif */; };
 		C0314D4020AC2FA200317F0C /* OTWKWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */; };
+		C0337AF420BE7FA600FCB373 /* OTUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0337AF320BE7FA600FCB373 /* OTUserInfoModel.swift */; };
+		C0337AFC20BE8F5100FCB373 /* En_LanguageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0337AFB20BE8F5100FCB373 /* En_LanguageList.plist */; };
 		C03E8A7B20B6C75300850D1F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8A7A20B6C75300850D1F /* BaseTableViewCell.swift */; };
 		C03E8A7D20B7A38000850D1F /* WaterWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8A7C20B7A38000850D1F /* WaterWaveView.swift */; };
 		C03E8A7F20B7F63100850D1F /* OTMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E8A7E20B7F63100850D1F /* OTMineHeaderView.swift */; };
@@ -66,7 +67,6 @@
 		5D746442B86130FE65D1879C /* Pods-O-trialPro-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-O-trialPro-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-O-trialPro-Swift/Pods-O-trialPro-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		C027576420B29C0E00A2B298 /* OTProjectListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTProjectListCell.swift; sourceTree = "<group>"; };
 		C027576620B2A20200A2B298 /* UITableViewCell+CellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CellHeight.swift"; sourceTree = "<group>"; };
-		C027576820B3B5F300A2B298 /* OTUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUserInfoModel.swift; sourceTree = "<group>"; };
 		C027577220B405D500A2B298 /* OTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTLoginModel.swift; sourceTree = "<group>"; };
 		C027577420B40A0F00A2B298 /* OTProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTProjectModel.swift; sourceTree = "<group>"; };
 		C027577620B40BB900A2B298 /* OTBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTBaseModel.swift; sourceTree = "<group>"; };
@@ -88,6 +88,12 @@
 		C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+WhenTapBlcok.swift"; sourceTree = "<group>"; };
 		C02E6CB120A4219B001D4963 /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
 		C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTWKWebController.swift; sourceTree = "<group>"; };
+		C0337AF320BE7FA600FCB373 /* OTUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUserInfoModel.swift; sourceTree = "<group>"; };
+		C0337AF520BE8B8500FCB373 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		C0337AF620BE8B8500FCB373 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C0337AF720BE8B9700FCB373 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		C0337AF820BE8B9800FCB373 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C0337AFB20BE8F5100FCB373 /* En_LanguageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = En_LanguageList.plist; sourceTree = "<group>"; };
 		C03E8A7A20B6C75300850D1F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		C03E8A7C20B7A38000850D1F /* WaterWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveView.swift; sourceTree = "<group>"; };
 		C03E8A7E20B7F63100850D1F /* OTMineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTMineHeaderView.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				C027577220B405D500A2B298 /* OTLoginModel.swift */,
+				C0337AF320BE7FA600FCB373 /* OTUserInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +254,7 @@
 		C02E6C9F20A2D675001D4963 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				C0337AFB20BE8F5100FCB373 /* En_LanguageList.plist */,
 				C0E9558920A019740091908D /* AppDelegate.swift */,
 				C0E955B220A02B400091908D /* Bridge_header.h */,
 				C02E6CA020A2D730001D4963 /* OTConstans.swift */,
@@ -408,7 +416,6 @@
 		C0E3AC2620AA6A7A00188D3C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C027576820B3B5F300A2B298 /* OTUserInfoModel.swift */,
 				C027577420B40A0F00A2B298 /* OTProjectModel.swift */,
 				C027577A20B53CD200A2B298 /* OTSiteModel.swift */,
 			);
@@ -574,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E9559420A019760091908D /* LaunchScreen.storyboard in Resources */,
+				C0337AFC20BE8F5100FCB373 /* En_LanguageList.plist in Resources */,
 				C0CC724E20B6A2B200EB51D8 /* mine.plist in Resources */,
 				C0E9559120A019760091908D /* Assets.xcassets in Resources */,
 				C0E955AE20A029CC0091908D /* README.md in Resources */,
@@ -638,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0337AF420BE7FA600FCB373 /* OTUserInfoModel.swift in Sources */,
 				C027577920B50E3100A2B298 /* UIButton+Extension.swift in Sources */,
 				C027578820B56D6300A2B298 /* HomeVC.swift in Sources */,
 				C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */,
@@ -680,7 +689,6 @@
 				C027577D20B560AF00A2B298 /* BaseNavigationController.swift in Sources */,
 				C0CC724A20B69E4800EB51D8 /* OTMineCell.swift in Sources */,
 				C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */,
-				C027576920B3B5F300A2B298 /* OTUserInfoModel.swift in Sources */,
 				C027577720B40BB900A2B298 /* OTBaseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +700,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C0E9558E20A019740091908D /* Base */,
+				C0337AF520BE8B8500FCB373 /* zh-Hans */,
+				C0337AF720BE8B9700FCB373 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -700,6 +710,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C0E9559320A019760091908D /* Base */,
+				C0337AF620BE8B8500FCB373 /* zh-Hans */,
+				C0337AF820BE8B9800FCB373 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -711,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -771,6 +784,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

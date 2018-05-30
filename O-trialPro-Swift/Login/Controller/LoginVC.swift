@@ -73,7 +73,6 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
             self.view.endEditing(true)
         }
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -205,13 +204,14 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
                     OTCenter.shared.token = model.data
                     let vc = MyProjectVC(); self.navigationController?.pushViewController(vc, animated: true)
                     vc.logOut = {
-                        OTUtils.LogOut("ddddddd")
+                        self.logOut()
                     }
                     DispatchQueue.main.async {
                         OTUtils.OTSetObject(self.nameTF.text!, OT_User_Email)
                         OTUtils.OTSetObject(self.pwdTF.text!, OT_User_Pwd)
                     }
-                    
+                    //  登录成功获取个人信息
+                    self.getUserInfo()
                 }
             }
         }) { (error) in
@@ -220,18 +220,37 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         }
     }
     
-//    func yb_attributeTapReturn(_ string: String!, range: NSRange, index: Int) {
-//
-//        OTUtils.LogOut("\(string), \(index)")
-//        if index == 0 {
-//            let webVC = OTWKWebController()
-//
-//            self.navigationController?.pushViewController(webVC, animated: true)
-//        }
-//
-//
-//    }
+    //  MARK:   - data
+    func getUserInfo() {
+        HttpHelper.Shared.Get(path: "/user/selfInfo", params: nil, success: { (jsonString, mes) in
+            if mes != nil {
+                UIView.alertText(mes)
+                return
+            }
+            if let model = JSONDeserializer<OTUserInfoModel>.deserializeFrom(json: jsonString, designatedPath: "data") {
+                OTCenter.shared.realName = model.realName
+                OTCenter.shared.vid = model.vid
+                OTCenter.shared.userNameWX = model.userNameWX
+                OTCenter.shared.projectCount = model.projectCount
+            }
+            
+            
+        }) { (error) in
+            OTUtils.LogOut(error)
+            UIView.alertText(error.localizedDescription);
+        }
+    }
     
+    func logOut() {
+        HttpHelper.Shared.Get(path: "/public/logout", params: nil, success: { (jsonString, mes) in
+            if mes != nil {
+                OTUtils.LogOut(String(format: "退出登录失败"))
+            }
+            OTUtils.LogOut(String(format: "退出登录成功"))
+        }) { (error) in
+            OTUtils.LogOut(error.localizedDescription);
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {

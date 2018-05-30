@@ -93,7 +93,9 @@ extension UIView {
         maskV?.backgroundColor = bgColor
         maskV?.alpha = alpha!
         maskV?.whenTapped {
-            clickHandler!()
+            if clickHandler != nil {
+                clickHandler!()
+            }
         }
         
         return maskV

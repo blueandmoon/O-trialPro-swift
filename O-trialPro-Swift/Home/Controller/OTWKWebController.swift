@@ -52,6 +52,7 @@ class OTWKWebController: BaseViewController, WKNavigationDelegate, WKUIDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addBackItem()
+        self.navigationController?.navigationBar.isHidden = false
         
         view.addSubview(webV)
         if self.url != nil {

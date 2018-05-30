@@ -17,7 +17,7 @@ class OTMineCell: BaseTableViewCell {
     var model: OTMineModel? {
         didSet {
             leftIV?.image = UIImage(named: (model?.img)!)
-            contentLbl?.text = model?.title
+            contentLbl?.text = model?.title?.inter_String()
         }
     }
     
@@ -61,10 +61,10 @@ class OTMineCell: BaseTableViewCell {
         topLine?.isHidden = true
         topLine?.backgroundColor = "dddddd".toUIColor()
 
-        bottomLine = UIView(frame: CGRect(x: 0, y: contentView.ot_hei - 1, width: kScreenWidth, height: 0.7))
-        contentView.addSubview(bottomLine!)
-        bottomLine?.isHidden = true
-        bottomLine?.backgroundColor = "dddddd".toUIColor()
+//        bottomLine = UIView(frame: CGRect(x: 0, y: contentView.ot_hei - 1, width: kScreenWidth, height: 0.7))
+//        contentView.addSubview(bottomLine!)
+//        bottomLine?.isHidden = true
+//        bottomLine?.backgroundColor = "dddddd".toUIColor()
         
         self.cellHeight = NSNumber(value: 50)
     }

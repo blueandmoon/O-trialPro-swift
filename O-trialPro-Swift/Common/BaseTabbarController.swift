@@ -11,10 +11,19 @@ import UIKit
 class BaseTabbarController: UITabBarController, UITabBarControllerDelegate {
 
     public static var shared = BaseTabbarController()
-    static let root = BaseTabbarController()
+    static var root = BaseTabbarController()
         
     private var navArr = [BaseNavigationController]()
     var curNav: BaseNavigationController?
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +72,7 @@ class BaseTabbarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func reBuildControllers() {
-//        root = BaseTabbarController()
+        BaseTabbarController.root = BaseTabbarController.init()
         keyWindow?.rootViewController = BaseTabbarController.root
     }
     

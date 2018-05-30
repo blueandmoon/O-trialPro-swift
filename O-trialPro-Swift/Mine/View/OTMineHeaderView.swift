@@ -66,6 +66,7 @@ class OTMineHeaderView: UIView {
         nameLbl = UILabel()
         self.addSubview(nameLbl!)
 //        nameLbl?.text = "ceshi"
+        nameLbl?.text = OTCenter.shared.realName
         nameLbl?.textColor = .white
         nameLbl?.textAlignment = .center
         _ = nameLbl?.sd_layout().centerXEqualToView(self)?.widthIs(200)?.heightIs(20)?.topSpaceToView(imgV, 15)
@@ -75,6 +76,7 @@ class OTMineHeaderView: UIView {
         wxLbl?.textColor = .white
         wxLbl?.font = UIFont.systemFont(ofSize: 12)
 //        wxLbl?.text = "ceshi"
+        wxLbl?.text = OTCenter.shared.userNameWX;
         wxLbl?.textAlignment = .center
         _ = wxLbl?.sd_layout().centerXEqualToView(self)?.widthIs(200)?.heightIs(20)?.topSpaceToView(nameLbl, 5)
     }
