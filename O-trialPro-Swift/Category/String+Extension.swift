@@ -17,6 +17,24 @@ extension String {
         return (self as NSString).getTextSize(font, constrainSize).height
     }
     
+    init(_ interStr: String) {
+        self.init()
+        let key = OTUtils.OTObject(OT_Language_key)
+        let dicPath = Bundle.main.path(forResource: "En_LanguageList", ofType: "plist")
+        let dic = NSDictionary(contentsOfFile: dicPath!) as! Dictionary<String, Any>
+        if key == "1" {
+            self.init(format: "%@", self)
+        } else {
+            if dic[self] == nil {
+                self.init(format: "%@", self)
+            } else {
+                self.init(format: "%@", dic[self] as! CVarArg)
+            }
+        }
+    }
+    
+    
+    
 //    init(str: String) {
 //        let key = OTUtils.OTObject(OT_Language_key)
 //        if key == "1" {
@@ -32,11 +50,11 @@ extension String {
     /// 国际化
     ///
     /// - Returns: 返回对应的字符串
-    public func inter_String() -> String? {
+    public func engString() -> String? {
         let key = OTUtils.OTObject(OT_Language_key)
         let dicPath = Bundle.main.path(forResource: "En_LanguageList", ofType: "plist")
         let dic = NSDictionary(contentsOfFile: dicPath!) as! Dictionary<String, Any>
-        return key == "1" ? dic[self] as! String : self
+        return key == "1" ? (dic[self] as! String) : self
     }
     
     

@@ -384,5 +384,7 @@
 	<string>total subjects</string>
 	<key>总数</key>
 	<string>total</string>
+	<key>离线图片</key>
+	<string>offline image</string>
 </dict>
 </plist>

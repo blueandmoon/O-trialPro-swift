@@ -186,8 +186,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
             return
         }
         
-        let salt = "em.W_-6q4Zc@a27n9B.comKVCAu.8FS@dE"
-        let saltPwd = pwdTF.text! + salt
+        let saltPwd = pwdTF.text! + OT_Salt
         let encoder = SHAEncoder()
         let encodedPass = encoder.getSha256String(encoder.getSha256String(saltPwd))
         

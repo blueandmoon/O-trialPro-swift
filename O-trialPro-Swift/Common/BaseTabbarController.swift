@@ -54,7 +54,7 @@ class BaseTabbarController: UITabBarController, UITabBarControllerDelegate {
         for temp in arr {
             let vc = temp["class"]
             let nav = BaseNavigationController(rootViewController: vc as! UIViewController)
-            nav.tabBarItem.title = temp["title"] as? String
+            nav.tabBarItem.title = (temp["title"] as? String)?.engString()
             nav.tabBarItem.image = UIImage(named: temp["img"]! as! String)
             nav.tabBarItem.selectedImage = UIImage(named: temp["seletedImg"]! as! String)
             

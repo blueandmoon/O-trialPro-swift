@@ -1,19 +1,18 @@
 //
-//  HomeVC.swift
+//  OffLinePictureVC.swift
 //  O-trialPro-Swift
 //
-//  Created by ligen on 2018/5/23.
+//  Created by ligen on 2018/6/20.
 //  Copyright © 2018年 oceanus. All rights reserved.
 //
 
 import UIKit
 
-class HomeVC: BaseViewController {
+class OffLinePictureVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.title = "首页"
-        self.title = "首页".engString()
+
         
     }
 

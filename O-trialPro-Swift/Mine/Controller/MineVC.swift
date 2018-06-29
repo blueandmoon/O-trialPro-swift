@@ -13,9 +13,14 @@ class MineVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     var list: [OTMineModel]?
     var listView: BaseTableView?
     var header: OTMineHeaderView?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
 
         configUI()
         handleData()
@@ -24,6 +29,7 @@ class MineVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     //  MARK:   - view
     func configUI() {
+        
         
         listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: CGFloat(kScreenHeight) - CGFloat(kTabbarHeight)), style: .plain)
         view.addSubview(listView!)
@@ -75,9 +81,38 @@ class MineVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
         let model = list?[indexPath.row];
         switch model?.title {
         case "工时薄":
-            OTUtils.LogOut(model?.title)
+//            OTUtils.LogOut(model?.title)
             let webVC = OTWKWebController.init(URL(string: String(format: "%@/timesheet/my", base_Url))!)
-            BaseTabbarController.root.pushViewController(webVC, true)
+            self.navigationController?.pushViewController(webVC, animated: true)
+            break
+        case "新手指引":
+            let web = OTWKWebController.init((URL(string: "https://appc.o-trial.com:9009/download/O-TrialPro%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C-APP%E7%AB%AF.pdf"))!)
+            self.navigationController?.pushViewController(web, animated: true)
+            break
+        case "公共直播室":
+            let web = OTWKWebController.init(URL(string: String(format: "http://live.oceanus-plus.cn/House/list/%@", (OTCenter.shared.projectModel?.orgId)!))!)
+            self.navigationController?.pushViewController(web, animated: true)
+        case "受试者库":
+            //  爬到受试者库
+            break
+        case "我的项目":
+            let vc = MyProjectVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+            break
+        case "离线图片":
+            self.navigationController?.pushViewController(OffLinePictureVC(), animated: true)
+            break
+        case "我的协议":
+            self.navigationController?.pushViewController(MyProtocolVC(), animated: true)
+            break
+        case "意见反馈":
+            let web = OTWKWebController.init(URL(string: String(format: "%@/tofeedback", base_Url))!)
+            self.navigationController?.pushViewController(web, animated: true)
+            break
+        case "设置":
+            let vc = SettingVC()
+            vc.arr = list![indexPath.row].items as? Array<OTMineModel>
+            self.navigationController?.pushViewController(vc, animated: true)
             break
             
             

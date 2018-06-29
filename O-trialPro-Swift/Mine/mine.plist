@@ -47,8 +47,12 @@
 		<string>我的项目</string>
 		<key>img</key>
 		<string>my_project</string>
-		<key>items</key>
-		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>离线图片</string>
+		<key>img</key>
+		<string>offlineImg</string>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -83,13 +87,13 @@
 				<key>title</key>
 				<string>切换语言</string>
 				<key>img</key>
-				<string>mine_language</string>
+				<string>my_language</string>
 			</dict>
 			<dict>
 				<key>title</key>
 				<string>修改密码</string>
 				<key>img</key>
-				<string>mine_password</string>
+				<string>my_password</string>
 			</dict>
 			<dict>
 				<key>title</key>

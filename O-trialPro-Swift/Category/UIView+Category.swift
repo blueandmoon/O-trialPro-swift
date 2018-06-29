@@ -45,7 +45,7 @@ extension UIView {
         for subView: UIView in self.subviews {
             
             let viewType = String(describing: type(of: subView))
-            OTUtils.LogOut("\(viewType)")
+//            OTUtils.LogOut("\(viewType)")
             if viewType == className {
                 return subView
             }

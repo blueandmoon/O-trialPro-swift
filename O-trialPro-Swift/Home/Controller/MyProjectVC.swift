@@ -18,7 +18,13 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     var originArr = [OTProjectModel]()
     var listView: BaseTableView?
     var logOut: (() -> ())?
+    var searchBar: UISearchBar?
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchBar?.removeFromSuperview()
+    }
     
     //  MARK:   - viewDidLoad
     override func viewDidLoad() {
@@ -45,20 +51,20 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     func configUI() {
         
         //  对此searchBar绝望了, 得空了自己写, 麻蛋的
-        let searchBar = UISearchBar(frame: CGRect(x: 40, y: CGFloat((kNavHeight - 30 - 20)/2), width: kScreenWidth - 80, height: 30))
-        self.navigationController?.navigationBar.addSubview(searchBar)
-        searchBar.layer.cornerRadius = 15
-        searchBar.clipsToBounds = true
-        searchBar.delegate = self
-        searchBar.tintColor = OT_Content_Gray.toUIColor()    //  不设置, 光标不出现, 奇哉
+        searchBar = UISearchBar(frame: CGRect(x: 40, y: CGFloat((kNavHeight - 30 - 20)/2), width: kScreenWidth - 80, height: 30))
+        self.navigationController?.navigationBar.addSubview(searchBar!)
+        searchBar!.layer.cornerRadius = 15
+        searchBar!.clipsToBounds = true
+        searchBar!.delegate = self
+        searchBar!.tintColor = OT_Content_Gray.toUIColor()    //  不设置, 光标不出现, 奇哉
         
-        let searchField = searchBar.value(forKey: "searchField") as? UITextField
+        let searchField = searchBar!.value(forKey: "searchField") as? UITextField
         searchField?.backgroundColor = .white
         searchField?.sd_cornerRadiusFromHeightRatio = NSNumber(value: 0.5)
         searchField?.clipsToBounds = true
         searchField?.textColor = OT_Title_Black.toUIColor()
       
-        for subview in searchBar.subviews {
+        for subview in searchBar!.subviews {
             subview.layer.cornerRadius = 15
             subview.clipsToBounds = true
             for sb in subview.subviews {
@@ -68,13 +74,20 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
             }
         }
         
-        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), style: .grouped)
+        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: CGFloat(kScreenHeight) - CGFloat(kNavHeight)), style: .grouped)
         view.addSubview(listView!)
         listView?.backgroundColor = OT_Main_Bg.toUIColor()
         listView?.delegate = self
         listView?.dataSource = self
 //        listView?.register(OTProjectListCell.classForCoder(), forCellReuseIdentifier: "OTProjectListCell")
         listView?.separatorStyle = .none
+        
+        let header = UILabel(frame: CGRect(x: 15, y: 0, width: 150, height: 40))
+        header.backgroundColor = .white
+        header.text = "     项目总数\(listArr.count)"
+        header.textColor = OT_Content_Gray.toUIColor()
+        header.font = UIFont.systemFont(ofSize: 16)
+        listView?.tableHeaderView = header
         
         
     }
@@ -99,18 +112,19 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let header = UILabel(frame: CGRect(x: 15, y: 0, width: 150, height: 40))
-            header.backgroundColor = .white
-            header.text = "     项目总数\(listArr.count)"
-            header.textColor = OT_Content_Gray.toUIColor()
-            header.font = UIFont.systemFont(ofSize: 16)
-            return header
-        }
+//        if section == 0 {
+//            let header = UILabel(frame: CGRect(x: 15, y: 0, width: 150, height: 40))
+//            header.backgroundColor = .white
+//            header.text = "     项目总数\(listArr.count)"
+//            header.textColor = OT_Content_Gray.toUIColor()
+//            header.font = UIFont.systemFont(ofSize: 16)
+//            return header
+//        }
         return UIView()
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 40: 10
+//        return section == 0 ? 40: 10
+        return 10
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -208,6 +222,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
                 OTCenter.shared.siteArr = arr
                 DispatchQueue.main.async {
                     keyWindow?.rootViewController = BaseTabbarController.root
+                    BaseTabbarController.shared.reBuildControllers()
                 }
                 
             }

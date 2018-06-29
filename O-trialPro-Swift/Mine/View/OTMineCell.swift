@@ -17,7 +17,7 @@ class OTMineCell: BaseTableViewCell {
     var model: OTMineModel? {
         didSet {
             leftIV?.image = UIImage(named: (model?.img)!)
-            contentLbl?.text = model?.title?.inter_String()
+            contentLbl?.text = model?.title?.engString()
         }
     }
     
@@ -46,7 +46,8 @@ class OTMineCell: BaseTableViewCell {
         
         let arrowIV = UIImageView(image: UIImage(named: "calendar_arrow_right"))
         contentView.addSubview(arrowIV)
-        _ = arrowIV.sd_layout().rightSpaceToView(contentView, 15)?.widthIs(10)?.centerYEqualToView(contentView)?.heightIs(12)
+        arrowIV.contentMode = .center
+        _ = arrowIV.sd_layout().rightSpaceToView(contentView, 15)?.widthIs(20)?.centerYEqualToView(contentView)?.heightIs(20)
         
         leftIV = UIImageView(image: UIImage(named: "ddd"))
         contentView.addSubview(leftIV!)

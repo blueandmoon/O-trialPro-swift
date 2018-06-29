@@ -27,7 +27,8 @@ public let keyWindow = UIApplication.shared.keyWindow
 public let infoDictionary =  Bundle.main.infoDictionary
 public let shortVersion = infoDictionary!["CFBundleShortVersionString"]
 
-
+//  MARK:   - 根vc
+let rootVC = BaseTabbarController.root
 
 //  MARK:   - 图片
 /// 头像占位图
@@ -45,7 +46,6 @@ public let OT_SubText_Gray = "#999999"    //  次级内容灰色?
 public let OT_Light_Gray = "#CCCCCC"  //  浅灰色?
 public let OT_Tiny_Gray = "#EEEEEE"   //  轻灰色
 
-
 //  MARK:   - 时间格式
 public let OTFormat_YearSecond = "yyyy-MM-dd HH:mm:ss"
 public let OTFormat_YearDay = "yyyy-MM-dd"
@@ -57,7 +57,8 @@ public let OT_User_Email = "user_emial"  //  用户名
 public let OT_User_Pwd = "user_pwd"  //  密码
 public let OT_Language_key = "enableEng"    //  国际化key值
 
-
+//  MARK:   - salt
+public let OT_Salt = "em.W_-6q4Zc@a27n9B.comKVCAu.8FS@dE"
 
 
 

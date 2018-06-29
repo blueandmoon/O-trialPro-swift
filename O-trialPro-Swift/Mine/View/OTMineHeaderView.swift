@@ -53,7 +53,7 @@ class OTMineHeaderView: UIView {
         let titleLbl = UILabel()
         self.addSubview(titleLbl)
         titleLbl.textColor = .white
-        titleLbl.text = "我的"
+        titleLbl.text = "我的".engString()
         titleLbl.textAlignment = .center
         _ = titleLbl.sd_layout().widthIs(80)?.centerXEqualToView(self)?.topSpaceToView(self, 33.5)?.heightIs(20)
         

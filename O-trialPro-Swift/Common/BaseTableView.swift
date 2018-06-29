@@ -18,8 +18,10 @@ class BaseTableView: UITableView {
             // Fallback on earlier versions
         }
         
-        self.separatorStyle = .none
+//        self.separatorStyle = .none
         self.showsVerticalScrollIndicator = false
+        
+        self.tableFooterView = UIView()
         
     }
     
