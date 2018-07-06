@@ -37,6 +37,17 @@ class BaseViewController: UIViewController {
     @objc func backClick(_ backItem: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    public func addRightButton(_ title: String) {
+//        var textW = title.getWidth(UIFont.systemFont(ofSize: 16), CGSize(width: 0, height: 20))
+//        textW = min(textW, 80)
+//
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(rightButtonClick(_:)))
+    }
+    
+    @objc func rightButtonClick(_ rightItem: UIBarButtonItem) {
+        OTUtils.LogOut("rightItemClick")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

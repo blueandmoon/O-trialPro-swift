@@ -135,12 +135,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
         return 0.01
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        OTCenter.shared.vid = listArr[indexPath.section].vid
-        OTCenter.shared.projectNo = listArr[indexPath.section].projectNo
-        OTCenter.shared.projectModel = listArr[indexPath.section]
-        getUseInfo()
-    }
+    
     
     //  MARK:   - UISearchBarDelegate
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -172,6 +167,12 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     }
     
     //  MARK:   - event
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        OTCenter.shared.vid = listArr[indexPath.section].vid
+        OTCenter.shared.projectNo = listArr[indexPath.section].projectNo
+        OTCenter.shared.projectModel = listArr[indexPath.section]
+        getUseInfo()
+    }
     
     //  MARK:   - data
     func getProjectList() {
@@ -195,6 +196,10 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     //  获取用户个人信息
     func getUseInfo() {
         HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/role", (OTCenter.shared.projectModel?.vid!)!), params: nil, success: { (jsonString, errorMessage) in
+            if errorMessage != nil {
+                OTUtils.LogOut(errorMessage);
+            }
+            
             let userModel = JSONDeserializer<OTUserInfoModel>.deserializeFrom(json: jsonString, designatedPath: "data")
             OTCenter.shared.vid = userModel?.vid
             if OTCenter.shared.userType == 0 {
@@ -219,7 +224,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
                 return
             }
             if let arr = JSONDeserializer<OTSiteModel>.deserializeModelArrayFrom(json: jsonString, designatedPath: "data") {
-                OTCenter.shared.siteArr = arr
+                OTCenter.shared.siteArr = (arr as! [OTSiteModel])
                 DispatchQueue.main.async {
                     keyWindow?.rootViewController = BaseTabbarController.root
                     BaseTabbarController.shared.reBuildControllers()

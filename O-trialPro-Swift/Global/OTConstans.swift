@@ -20,8 +20,8 @@ public let kScreenHeight = UIScreen.main.bounds.height
 public let kStatusHeight = UIApplication.shared.statusBarFrame.size.height
 public let kIOSVersion = Double(UIDevice.current.systemVersion)
 public let kIPHONE_X = (kScreenWidth == 375 && kStatusHeight == 812 ? true : false)
-public let kTabbarHeight = (kIPHONE_X ? 83 : 49)
-public let kNavHeight = (kIPHONE_X ? 88.0 : 64.0)
+public let kTabbarHeight: CGFloat = (kIPHONE_X ? 83 : 49)
+public let kNavHeight: CGFloat = (kIPHONE_X ? 88.0 : 64.0)
 public let keyWindow = UIApplication.shared.keyWindow
 
 public let infoDictionary =  Bundle.main.infoDictionary

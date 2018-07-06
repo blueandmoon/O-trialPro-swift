@@ -28,19 +28,25 @@ public class HttpHelper {
         
         let path = HttpHelper().checkPathHeader(path)
         
+        var parmStr = "?"
+        if let params = params {
+            for (key, value) in params {
+                let tempStr = String(format: "%@=%@", key, value as! String)
+                if parmStr == "?" {
+                    parmStr = parmStr.appending(tempStr)
+                } else {
+                    parmStr = parmStr.appending("&").appending(tempStr)
+                }
+            }
+        }
         
-        let url = URL(string: path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        
+        let url = URL(string: String(format: "%@%@", path, parmStr).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         var request = URLRequest.init(url: url!)
         request.setValue("zh-CN,zh", forHTTPHeaderField: "Accept-Language")
         request.setValue(OTCenter.shared.token, forHTTPHeaderField: "Token")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
-        
-        if let params = params {
-            for (key, value) in params {
-                request.setValue(value as? String, forHTTPHeaderField: key)
-            }
-        }
         
         let session = URLSession.shared
         

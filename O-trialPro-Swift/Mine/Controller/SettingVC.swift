@@ -19,6 +19,9 @@ class SettingVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
 //    }
     var listView: BaseTableView?
     
+//    deinit {
+//        OTUtils.LogOut("dealloc之")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,8 @@ class SettingVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
     //  MARK: - view
     
     func confiUI() {
-        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: CGFloat(kScreenHeight) - CGFloat(kNavHeight)), style: .plain)
+        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavHeight), style: .plain)
+//        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavHeightL, style: .plain)
         view.addSubview(listView!)
         listView?.delegate = self
         listView?.dataSource = self
@@ -70,12 +74,28 @@ class SettingVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
             self.navigationController?.pushViewController(ModifyPwdVC(), animated: true)
             break
         case "退出登录":
+            logOut()
             break
         default:
             break
         }
         
         
+    }
+    
+    func logOut() {
+        HttpHelper.Shared.Get(path: "/public/logout", params: nil, success: { (jsonString, mes) in
+            if mes != nil {
+                UIView.alertText(mes)
+                return
+            }
+            DispatchQueue.main.async {
+                UIApplication.shared.keyWindow?.rootViewController = BaseNavigationController(rootViewController: LoginVC())
+            }
+            
+        }) { (error) in
+            OTUtils.LogOut(error.localizedDescription)
+        }
     }
     
     //  MARK: - data

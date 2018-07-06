@@ -21,7 +21,7 @@ class AboutOrialVC: BaseViewController, UITableViewDelegate, UITableViewDataSour
     
     func configUI() {
         
-        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: CGFloat(kScreenHeight) - CGFloat(kNavHeight)), style: .plain)
+        listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavHeight), style: .plain)
         view.addSubview(listView!)
         listView?.delegate = self
         listView?.dataSource = self

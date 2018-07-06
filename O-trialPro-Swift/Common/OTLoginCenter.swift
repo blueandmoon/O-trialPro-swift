@@ -30,7 +30,7 @@ public class OTCenter {
     var userNameWX: String?
     var projectCount: Int?
     var projectNo: String?
-    var siteArr: [OTSiteModel?]?
+    var siteArr: [OTSiteModel]?
     var userType: Int? {
         get {
             if vid == "PM" || vid == "CRA" {

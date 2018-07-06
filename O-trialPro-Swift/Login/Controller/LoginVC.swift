@@ -60,6 +60,10 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
     var pwdTF : OTLoginTextField!
     
     
+    deinit {
+        OTUtils.LogOut("dealloc之")
+    }
+    
     //  MARK:   - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -201,7 +205,11 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
             if let model = JSONDeserializer<OTLoginModel>.deserializeFrom(json: res) {
                 if model.success! {
                     OTCenter.shared.token = model.data
-                    let vc = MyProjectVC(); self.navigationController?.pushViewController(vc, animated: true)
+                    let vc = MyProjectVC()
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+//                    UIApplication.shared.keyWindow?.rootViewController = vc
                     vc.logOut = {
                         self.logOut()
                     }
