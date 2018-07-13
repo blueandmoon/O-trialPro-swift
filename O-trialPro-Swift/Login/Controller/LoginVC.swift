@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ObjectMapper
+//import ObjectMapper
 import HandyJSON
 //import NVActivityIndicatorView
 
@@ -34,18 +34,18 @@ class Person: Codable {
     }
 }
 
-struct Template: Mappable {
-    var name_a: String?
-    var age: Int?
-    
-    init?(map: Map) {
-    }
-    
-    mutating func mapping(map: Map) {
-        name_a <- map["name_a"]
-        age <- map["age"]
-    }
-}
+//struct Template: Mappable {
+//    var name_a: String?
+//    var age: Int?
+//
+//    init?(map: Map) {
+//    }
+//
+//    mutating func mapping(map: Map) {
+//        name_a <- map["name_a"]
+//        age <- map["age"]
+//    }
+//}
 
 class NetResponse: Codable {
     var data: String?
@@ -61,7 +61,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
     
     
     deinit {
-        OTUtils.LogOut("dealloc之")
+        LogOut("dealloc之")
     }
     
     //  MARK:   - viewDidLoad
@@ -93,7 +93,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
     
     //  MARK: - views
     
-    func configUI() {
+    override func configUI() {
         
         let logo = UIImage(named: "my_login_logo")
         let logoIV = UIImageView(image: logo)
@@ -104,7 +104,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         nameTF = OTLoginTextField()
         view.addSubview(nameTF)
         nameTF.placeholder = "邮箱"
-        nameTF.text = OTUtils.OTObject(OT_User_Email
+        nameTF.text = OTObject(OT_User_Email
         )
         nameTF.leftImg = UIImage(named: "my_login_user")
         _ = nameTF.sd_layout().centerXEqualToView(view)?.topSpaceToView(logoIV, 60)?.widthIs(view.bounds.size.width - 30)?.heightIs(45)
@@ -113,7 +113,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         view.addSubview(pwdTF)
         pwdTF.isSecureTextEntry = true
         pwdTF.placeholder = "密码"
-        pwdTF.text = OTUtils.OTObject(OT_User_Pwd)
+        pwdTF.text = OTObject(OT_User_Pwd)
         pwdTF.leftImg = UIImage(named: "my_login_password")
         _ = pwdTF.sd_layout().centerXEqualToView(view)?.topSpaceToView(nameTF, 15)?.widthIs(view.bounds.size.width - 30)?.heightIs(45)
 
@@ -121,8 +121,8 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         view.addSubview(loginBtn)
         loginBtn.setTitle("登录", for: .normal)
         loginBtn.sd_cornerRadiusFromHeightRatio = 0.5
-        loginBtn.backgroundColor = UIColor(hexString: "f8f8f8")
-        loginBtn.setTitleColor(UIColor(hexString: "ffffff"), for: .normal)
+        loginBtn.backgroundColor = HexColor("f8f8f8")
+        loginBtn.setTitleColor(HexColor("ffffff"), for: .normal)
         _ = loginBtn.sd_layout().leftEqualToView(nameTF)?.rightEqualToView(nameTF)?.topSpaceToView(pwdTF, 15)?.heightRatioToView(pwdTF, 1.0)
         loginBtn.addTarget(self, action: #selector(self.loginClick(_:)), for: .touchUpInside)
         loginBtn.clickInterval = NSNumber(value: 1.0)
@@ -171,7 +171,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
         view.addSubview(wxIV)
         _ = wxIV.sd_layout().centerXEqualToView(versionLbl)?.widthIs(32)!.bottomSpaceToView(versionLbl, 10)?.heightIs(32)
         wxIV.whenTapped {   //  微信登录
-            OTUtils.LogOut("微信登录")
+            LogOut("微信登录")
         }
         
         
@@ -182,11 +182,11 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
     @objc func loginClick(_ button: UIButton) {
         
         if (nameTF.text?.count)! < 0 {
-            OTUtils.LogOut("请输入用户名")
+            LogOut("请输入用户名")
             return
         }
         if (pwdTF.text?.count)! < 0 {
-            OTUtils.LogOut("请输入密码")
+            LogOut("请输入密码")
             return
         }
         
@@ -214,15 +214,15 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
                         self.logOut()
                     }
                     DispatchQueue.main.async {
-                        OTUtils.OTSetObject(self.nameTF.text!, OT_User_Email)
-                        OTUtils.OTSetObject(self.pwdTF.text!, OT_User_Pwd)
+                        OTSetObject(self.nameTF.text!, OT_User_Email)
+                        OTSetObject(self.pwdTF.text!, OT_User_Pwd)
                     }
                     //  登录成功获取个人信息
                     self.getUserInfo()
                 }
             }
         }) { (error) in
-            OTUtils.LogOut(error)
+            LogOut(error)
             UIView.alertText(error.localizedDescription)
         }
     }
@@ -243,7 +243,7 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
             
             
         }) { (error) in
-            OTUtils.LogOut(error)
+            LogOut(error)
             UIView.alertText(error.localizedDescription);
         }
     }
@@ -251,11 +251,11 @@ class LoginVC: BaseViewController, UITextFieldDelegate, YBAttributeTapActionDele
     func logOut() {
         HttpHelper.Shared.Get(path: "/public/logout", params: nil, success: { (jsonString, mes) in
             if mes != nil {
-                OTUtils.LogOut(String(format: "退出登录失败"))
+                LogOut(String(format: "退出登录失败"))
             }
-            OTUtils.LogOut(String(format: "退出登录成功"))
+            LogOut(String(format: "退出登录成功"))
         }) { (error) in
-            OTUtils.LogOut(error.localizedDescription);
+            LogOut(error.localizedDescription);
         }
     }
     

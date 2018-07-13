@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import SnapKit
+//import Alamofire
+import HandyJSON
 
 /// MARK    - 基本网址
 public let base_Url = "http://122.144.199.68:9002"  //  dev

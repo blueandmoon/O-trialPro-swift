@@ -28,7 +28,7 @@ class BarChart: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDele
                     }
                 }
             }
-            OTUtils.LogOut("刷新")
+            LogOut("刷新")
             peak = ceil(p/3.0) * 3
             DispatchQueue.main.async {
                 self.titleLbl?.text = String(format: "  %@: %d", "受试者总数".engString()!, total)
@@ -70,11 +70,11 @@ class BarChart: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDele
         let tf = UITextField()
         self.addSubview(tf)
         tf.text = " 人数"
-        tf.textColor = UIColor(hexString: OT_Light_Yellow)
+        tf.textColor = HexColor(OT_Light_Yellow)
         tf.font = UIFont.systemFont(ofSize: 11)
         tf.leftViewMode = .always
         let leftV = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        leftV.backgroundColor = UIColor(hexString: OT_Light_Yellow)
+        leftV.backgroundColor = HexColor(OT_Light_Yellow)
         tf.leftView = leftV
         tf.isUserInteractionEnabled = false
         _ = tf.sd_layout().leftSpaceToView(self, 15)?.widthIs(50)?.heightIs(15)?.topSpaceToView(self, 55)
@@ -83,7 +83,7 @@ class BarChart: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDele
         self.addSubview(titleLbl!)
         titleLbl?.frame = CGRect(x: 0, y: 0, width: self.ot_wid, height: k_chartHeaderSpace);
         titleLbl?.textAlignment = .left
-        titleLbl?.textColor = UIColor(hexString: OT_Content_Gray)
+        titleLbl?.textColor = HexColor(OT_Content_Gray)
         titleLbl?.text = "  受试者总数: ".engString()
         titleLbl?.backgroundColor = .white
         
@@ -140,7 +140,7 @@ class BarChart: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDele
     
     //  MARK:   - event
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        OTUtils.LogOut("...")
+        LogOut("...")
     }
     
     

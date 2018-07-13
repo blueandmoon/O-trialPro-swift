@@ -28,7 +28,7 @@ class MineVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     //  MARK:   - view
-    func configUI() {
+    override func configUI() {
         
         
         listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: CGFloat(kScreenHeight) - CGFloat(kTabbarHeight)), style: .plain)
@@ -71,17 +71,17 @@ class MineVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     //  MARK:   - event
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        if indexPath.row == 0 {   //  切换语言
-//            if OTUtils.OTObject(OT_Language_key) == "1" {
-//                OTUtils.OTSetObject("0", OT_Language_key)
+//            if OTObject(OT_Language_key) == "1" {
+//                OTSetObject("0", OT_Language_key)
 //            } else {
-//                OTUtils.OTSetObject("1", OT_Language_key)
+//                OTSetObject("1", OT_Language_key)
 //            }
 //            BaseTabbarController.shared.reBuildControllers()
 //        }
         let model = list?[indexPath.row];
         switch model?.title {
         case "工时薄":
-//            OTUtils.LogOut(model?.title)
+//            LogOut(model?.title)
             let webVC = OTWKWebController.init(URL(string: String(format: "%@/timesheet/my", base_Url))!)
             self.navigationController?.pushViewController(webVC, animated: true)
             break

@@ -72,7 +72,7 @@ class WaterWaveView: UIView {
         self.endColor = endColor
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor(hexString: "edf0f4", alpha: 0.1)
+        self.backgroundColor = HexColor("edf0f4", 0.1)
         self.layer.masksToBounds = true
         
         configParams()

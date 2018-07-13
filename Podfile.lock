@@ -4,11 +4,10 @@ PODS:
   - HandyJSON (4.1.1)
   - IQKeyboardManager (6.0.2)
   - Kingfisher (4.7.0)
-  - MJExtension (3.0.13)
   - NVActivityIndicatorView (4.2.0):
     - NVActivityIndicatorView/Presenter (= 4.2.0)
   - NVActivityIndicatorView/Presenter (4.2.0)
-  - ObjectMapper (3.1.0)
+  - SnapKit (4.0.0)
   - YBAttributeTextTapAction (2.0.6)
 
 DEPENDENCIES:
@@ -17,9 +16,8 @@ DEPENDENCIES:
   - HandyJSON (~> 4.1.1)
   - IQKeyboardManager
   - Kingfisher
-  - MJExtension
   - NVActivityIndicatorView
-  - ObjectMapper
+  - SnapKit
   - YBAttributeTextTapAction
 
 SPEC CHECKSUMS:
@@ -28,11 +26,10 @@ SPEC CHECKSUMS:
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
   IQKeyboardManager: c49d59e358aeeffaa0280aa305093c2b194d2607
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   YBAttributeTextTapAction: 650ff36251479f8cfc7b5dd8fb62587c538ce502
 
-PODFILE CHECKSUM: 2d9946da90a94ee0cd5ebe9d6cbe8df8535f4d8a
+PODFILE CHECKSUM: 924b3f7bcc9b67d2ff26880afe96d0b5abc5b63d
 
 COCOAPODS: 1.2.1

@@ -10,4 +10,5 @@ pod 'YBAttributeTextTapAction'  #   富文本点击
     pod 'HandyJSON', '~> 4.1.1'
 #    pod 'ObjectMapper'  #   json <-> model
     pod 'IQKeyboardManager' #   键盘
+    pod 'SnapKit'   #   masonry swift版
 end

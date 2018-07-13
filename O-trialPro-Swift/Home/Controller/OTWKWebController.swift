@@ -83,12 +83,12 @@ class OTWKWebController: BaseViewController, WKNavigationDelegate, WKUIDelegate,
     
     //  MARK:   - WKScriptMessageHandler
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        OTUtils.LogOut("js传来的消息: \(message)")
+        LogOut("js传来的消息: \(message)")
     }
     
     //  MARK:   - WKWebViewDelegate
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        OTUtils.LogOut(error)
+        LogOut(error)
         
     }
     
@@ -136,11 +136,11 @@ class OTWKWebController: BaseViewController, WKNavigationDelegate, WKUIDelegate,
         let doc = "document.body.outerHTML"
         webView.evaluateJavaScript(doc) { (htmlStr, error) in
             if error != nil {
-                OTUtils.LogOut(error ?? "")
+                LogOut(error ?? "")
             }
-            OTUtils.LogOut(htmlStr ?? "")
+            LogOut(htmlStr ?? "")
         }
-        OTUtils.LogOut("\(String(describing: webView.url))")
+        LogOut("\(String(describing: webView.url))")
         decisionHandler(WKNavigationResponsePolicy.allow)
         
     }

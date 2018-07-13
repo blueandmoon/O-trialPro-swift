@@ -23,12 +23,12 @@ class MyProtocolVC: BaseViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //  MARK:   - view
-    func configUI() {
+    override func configUI() {
         lv = UITableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: CGFloat(kScreenHeight) - CGFloat(kNavHeight)), style: .grouped)
         view.addSubview(lv!)
         lv?.delegate = self
         lv?.dataSource = self
-        lv?.backgroundColor = UIColor(hexString: OT_Main_Bg)
+        lv?.backgroundColor = HexColor(OT_Main_Bg)
         lv?.separatorStyle = .none
         lv?.tableFooterView = UIView()
     }
@@ -77,7 +77,7 @@ class MyProtocolVC: BaseViewController, UITableViewDelegate, UITableViewDataSour
     
     
     //  MARK:   -   data
-    func getData() {
+    override func getData() {
         arr = ["用户注册及APP使用协议", "最终用户使用协议(方案)"];
         lv?.reloadData()
     }

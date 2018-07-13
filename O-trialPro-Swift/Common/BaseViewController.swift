@@ -16,13 +16,10 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         
-        
-//        let img = UIImage.imageFromColor(.red, CGSize(width: kScreenWidth, height: CGFloat(kNavHeight)))
         self.navigationController?.navigationBar.barTintColor = OT_Light_Yellow.toUIColor()
         self.navigationController?.navigationBar.shadowImage = UIImage()    //  导航栏下灰条
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17), NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
         
         if (kIOSVersion!) < 11.0 {
             self.navigationController?.automaticallyAdjustsScrollViewInsets = false
@@ -46,8 +43,18 @@ class BaseViewController: UIViewController {
     }
     
     @objc func rightButtonClick(_ rightItem: UIBarButtonItem) {
-        OTUtils.LogOut("rightItemClick")
+        LogOut("rightItemClick")
     }
+    
+    public func configUI() {
+        LogOut("加载view")
+    }
+    
+    public func getData() {
+        LogOut("请求数据")
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

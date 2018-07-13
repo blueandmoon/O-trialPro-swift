@@ -13,14 +13,14 @@ class SettingVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
     var arr : Array<OTMineModel>?
 //    {
 //        didSet {
-//            OTUtils.LogOut(arr?.count)
+//            LogOut(arr?.count)
 //            listView?.reloadData()
 //        }
 //    }
     var listView: BaseTableView?
     
 //    deinit {
-//        OTUtils.LogOut("dealloc之")
+//        LogOut("dealloc之")
 //    }
     
     override func viewDidLoad() {
@@ -62,10 +62,10 @@ class SettingVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
             self.navigationController?.pushViewController(AboutOrialVC(), animated: true)
             break
         case "切换语言":
-            if OTUtils.OTObject(OT_Language_key) == "1" {
-                OTUtils.OTSetObject("0", OT_Language_key)
+            if OTObject(OT_Language_key) == "1" {
+                OTSetObject("0", OT_Language_key)
             } else {
-                OTUtils.OTSetObject("1", OT_Language_key)
+                OTSetObject("1", OT_Language_key)
             }
 //            keyWindow?.rootViewController = BaseTabbarController.root
             BaseTabbarController.shared.reBuildControllers()
@@ -94,7 +94,7 @@ class SettingVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
             }
             
         }) { (error) in
-            OTUtils.LogOut(error.localizedDescription)
+            LogOut(error.localizedDescription)
         }
     }
     

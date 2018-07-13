@@ -45,7 +45,7 @@ extension UIView {
         for subView: UIView in self.subviews {
             
             let viewType = String(describing: type(of: subView))
-//            OTUtils.LogOut("\(viewType)")
+//            LogOut("\(viewType)")
             if viewType == className {
                 return subView
             }
@@ -125,7 +125,7 @@ extension UIView {
         lbl?.alpha = 0.8
         lbl?.textColor = .white
         let maskV = lbl?.addMaskView {
-//            OTUtils.LogOut("点击蒙板")
+//            LogOut("点击蒙板")
         }
         maskV?.addSubview(lbl!)
         
@@ -144,7 +144,7 @@ extension UIView {
         
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-//            OTUtils.LogOut("三秒结束")
+//            LogOut("三秒结束")
             lbl?.removeFromSuperview()
             maskV?.removeFromSuperview()
         }

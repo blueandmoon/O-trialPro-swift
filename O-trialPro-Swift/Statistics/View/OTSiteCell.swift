@@ -32,11 +32,11 @@ class OTSiteCell: BaseTableViewCell {
     }
         
     
-    func configUI() {
+    override func configUI() {
         lbl = UILabel()
         contentView.addSubview(lbl!)
         lbl?.font = UIFont.systemFont(ofSize: 16)
-        lbl?.textColor = UIColor(hexString: OT_Content_Gray)
+        lbl?.textColor = HexColor(OT_Content_Gray)
         lbl?.textAlignment = .left
         _ = lbl?.sd_layout().leftSpaceToView(contentView, 15)?.rightEqualToView(contentView)?.centerYEqualToView(contentView)?.heightIs(20)
     }

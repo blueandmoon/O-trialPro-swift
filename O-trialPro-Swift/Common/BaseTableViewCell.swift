@@ -10,9 +10,15 @@ import UIKit
 
 class BaseTableViewCell: UITableViewCell {
 
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.cellHeight = NSNumber(value: 40.0)
+        configUI()
+    }
+    
+    func configUI() {
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

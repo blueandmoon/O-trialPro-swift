@@ -47,7 +47,7 @@ class OTMineHeaderView: UIView {
     func configUI() {
         self.backgroundColor = .clear
         
-        waterView = WaterWaveView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 228), UIColor(hexString: "fbd49d", alpha: 0.7), UIColor(hexString: "ff785c", alpha: 0.7))
+        waterView = WaterWaveView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 228), HexColor("fbd49d", 0.7), HexColor("ff785c", 0.7))
         self.addSubview(waterView!)
         
         let titleLbl = UILabel()

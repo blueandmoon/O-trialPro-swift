@@ -33,13 +33,13 @@ class MyProtocolCell: BaseTableViewCell {
         return cell as! MyProtocolCell
     }
     
-    func configUI() {
+    override func configUI() {
         
         lbl = UILabel()
         contentView.addSubview(lbl!)
         lbl?.text = "我的协议"
         lbl?.font = UIFont.systemFont(ofSize: 16);
-        lbl?.textColor = UIColor(hexString: OT_Content_Gray)
+        lbl?.textColor = HexColor(OT_Content_Gray)
         lbl?.sd_layout().leftSpaceToView(contentView, 15)?.rightSpaceToView(contentView, 100)?.centerYEqualToView(contentView)?.heightIs(20)
         
         iv = UIImageView(image: UIImage(named: "calendar_arrow_right"))

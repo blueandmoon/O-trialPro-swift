@@ -48,7 +48,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     
     
     //  MARK:   - view
-    func configUI() {
+    override func configUI() {
         
         //  对此searchBar绝望了, 得空了自己写, 麻蛋的
         searchBar = UISearchBar(frame: CGRect(x: 40, y: CGFloat((kNavHeight - 30 - 20)/2), width: kScreenWidth - 80, height: 30))
@@ -189,7 +189,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
 //            DispatchQueue.main.async {
 //            }
         }) { (error) in
-            OTUtils.LogOut(error)
+            LogOut(error)
         }
     }
     
@@ -197,7 +197,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     func getUseInfo() {
         HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/role", (OTCenter.shared.projectModel?.vid!)!), params: nil, success: { (jsonString, errorMessage) in
             if errorMessage != nil {
-                OTUtils.LogOut(errorMessage);
+                LogOut(errorMessage);
             }
             
             let userModel = JSONDeserializer<OTUserInfoModel>.deserializeFrom(json: jsonString, designatedPath: "data")
@@ -210,7 +210,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
                 
             }
         }) { (error) in
-            OTUtils.LogOut(error)
+            LogOut(error)
         }
     }
     
@@ -218,7 +218,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
     func getSiteList() {
         
         HttpHelper.Shared.Get(path: String(format: "/userInfo/project/%@/sites", (OTCenter.shared.projectModel?.vid!)!), params: nil, success: { (jsonString, mes) in
-//            OTUtils.LogOut(jsonString)
+//            LogOut(jsonString)
             if mes != nil {
                 UIView.alertText(mes)
                 return
@@ -233,7 +233,7 @@ class MyProjectVC: BaseViewController, UISearchBarDelegate, UITableViewDelegate,
             }
             
         }) { (error) in
-            OTUtils.LogOut(error)
+            LogOut(error)
         }
         
     }

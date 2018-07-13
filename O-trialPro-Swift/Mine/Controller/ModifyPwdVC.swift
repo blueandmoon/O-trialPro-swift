@@ -25,7 +25,7 @@ class ModifyPwdVC: BaseViewController {
         
     }
     
-    func configUI() {
+    override func configUI() {
         
         pwdTF = UITextField()
         view.addSubview(pwdTF!)
@@ -36,7 +36,7 @@ class ModifyPwdVC: BaseViewController {
         pwdTF?.setValue(NSNumber(value: 10), forKeyPath: "paddingLeft")
         pwdTF?.layer.cornerRadius = 5
         pwdTF?.clipsToBounds = true
-        pwdTF?.layer.borderColor = UIColor(hexString: OT_Light_Yellow).cgColor
+        pwdTF?.layer.borderColor = HexColor(OT_Light_Yellow).cgColor
         _ = pwdTF?.sd_layout().leftSpaceToView(view, 15)?.rightSpaceToView(view, 15)?.topSpaceToView(view, 20)?.heightIs(40)
         
         newPwdTf = UITextField()
@@ -48,7 +48,7 @@ class ModifyPwdVC: BaseViewController {
         newPwdTf?.setValue(NSNumber(value: 10), forKeyPath: "paddingLeft")
         newPwdTf?.layer.cornerRadius = 5
         newPwdTf?.clipsToBounds = true
-        newPwdTf?.layer.borderColor = UIColor(hexString: OT_Light_Yellow).cgColor
+        newPwdTf?.layer.borderColor = HexColor(OT_Light_Yellow).cgColor
         _ = newPwdTf?.sd_layout().leftEqualToView(pwdTF)?.rightEqualToView(pwdTF)?.heightRatioToView(pwdTF, 1.0)?.topSpaceToView(pwdTF, 15)
         
         confirmTf = UITextField()
@@ -60,13 +60,13 @@ class ModifyPwdVC: BaseViewController {
         confirmTf?.setValue(NSNumber(value: 10), forKeyPath: "paddingLeft")
         confirmTf?.layer.cornerRadius = 5
         confirmTf?.clipsToBounds = true
-        confirmTf?.layer.borderColor = UIColor(hexString: OT_Light_Yellow).cgColor
+        confirmTf?.layer.borderColor = HexColor(OT_Light_Yellow).cgColor
         _ = confirmTf?.sd_layout().leftEqualToView(pwdTF)?.rightEqualToView(pwdTF)?.heightRatioToView(pwdTF, 1.0)?.topSpaceToView(newPwdTf, 15)
         
         modifyBtn = UIButton(type: .custom)
         view.addSubview(modifyBtn!)
         modifyBtn?.setTitle("修改", for: .normal)
-        modifyBtn?.backgroundColor = UIColor(hexString: OT_Light_Yellow)
+        modifyBtn?.backgroundColor = HexColor(OT_Light_Yellow)
         modifyBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         modifyBtn?.layer.cornerRadius = 5
         modifyBtn?.clipsToBounds = true

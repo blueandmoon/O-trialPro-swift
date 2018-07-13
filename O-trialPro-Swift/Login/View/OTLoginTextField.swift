@@ -29,7 +29,7 @@ class OTLoginTextField: UITextField {
         self.placeholder = ""
         self.font = UIFont.systemFont(ofSize: 17);
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.init(hexString: "dddddd").cgColor
+        self.layer.borderColor = HexColor("dddddd").cgColor
         leftImgV = UIImageView(frame: CGRect(x: 0, y: 0, width: 25 + 20, height: 25))
         leftImgV.contentMode = UIViewContentMode.right
         self.leftViewMode = UITextFieldViewMode.always

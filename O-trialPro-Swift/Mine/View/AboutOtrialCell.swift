@@ -33,19 +33,19 @@ class AboutOtrialCell: BaseTableViewCell {
         return cell as! AboutOtrialCell
     }
     
-    func configUI() {
+    override func configUI() {
         
         leftLbl = UILabel()
         contentView.addSubview(leftLbl!)
         leftLbl?.font = UIFont.systemFont(ofSize: 16)
-        leftLbl?.textColor = UIColor(hexString: OT_Content_Gray)
+        leftLbl?.textColor = HexColor(OT_Content_Gray)
         leftLbl?.sd_layout().leftSpaceToView(contentView, 15)?.widthIs(150)?.heightIs(20)?.centerYEqualToView(contentView)
         
         rightLbl = UILabel()
         contentView.addSubview(rightLbl!)
         rightLbl?.textAlignment = .right
         rightLbl?.font = UIFont.systemFont(ofSize: 16)
-        rightLbl?.textColor = UIColor(hexString: OT_Content_Gray)
+        rightLbl?.textColor = HexColor(OT_Content_Gray)
         rightLbl?.sd_layout().rightSpaceToView(contentView, 15)?.widthIs(150)?.heightIs(20)?.centerYEqualToView(contentView)
         
     }

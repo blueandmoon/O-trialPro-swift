@@ -42,7 +42,7 @@ class OTMineCell: BaseTableViewCell {
         return cell as! OTMineCell
     }
     
-    func configUI() {
+    override func configUI() {
         
         let arrowIV = UIImageView(image: UIImage(named: "calendar_arrow_right"))
         contentView.addSubview(arrowIV)

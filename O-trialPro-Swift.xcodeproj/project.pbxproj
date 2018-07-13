@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7628D239C36F7C34B4EF14B0 /* Pods_O_trialPro_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */; };
+		C00C3D2A20F7475400031952 /* OTProjectDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C3D2920F7475400031952 /* OTProjectDetailCell.swift */; };
+		C00C3D2C20F8719A00031952 /* OTSiteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C3D2B20F8719A00031952 /* OTSiteListCell.swift */; };
+		C00C3D3020F880E900031952 /* OTTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C3D2F20F880E900031952 /* OTTools.swift */; };
 		C027576520B29C0E00A2B298 /* OTProjectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027576420B29C0E00A2B298 /* OTProjectListCell.swift */; };
 		C027576720B2A20200A2B298 /* UITableViewCell+CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027576620B2A20200A2B298 /* UITableViewCell+CellHeight.swift */; };
 		C027577320B405D500A2B298 /* OTLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C027577220B405D500A2B298 /* OTLoginModel.swift */; };
@@ -29,11 +32,11 @@
 		C02D604E20EF18A500BB6E2C /* OTStsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D604D20EF18A500BB6E2C /* OTStsModel.swift */; };
 		C02D605020EF4F3E00BB6E2C /* OTSiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D604F20EF4F3E00BB6E2C /* OTSiteView.swift */; };
 		C02D605220EF556300BB6E2C /* OTSiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D605120EF556300BB6E2C /* OTSiteCell.swift */; };
+		C02D605420F2F23B00BB6E2C /* ProjectDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D605320F2F23B00BB6E2C /* ProjectDetailVC.swift */; };
 		C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */; };
 		C02E6C8720A174BD001D4963 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */; };
 		C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */; };
 		C02E6CA120A2D730001D4963 /* OTConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA020A2D730001D4963 /* OTConstans.swift */; };
-		C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA220A2D741001D4963 /* OTUtils.swift */; };
 		C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */; };
 		C02E6CAC20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */; };
 		C02E6CB220A4219B001D4963 /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = C02E6CB120A4219B001D4963 /* load.gif */; };
@@ -83,6 +86,9 @@
 /* Begin PBXFileReference section */
 		541F5C89567CB90B6EFAAA48 /* Pods_O_trialPro_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_O_trialPro_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D746442B86130FE65D1879C /* Pods-O-trialPro-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-O-trialPro-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-O-trialPro-Swift/Pods-O-trialPro-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		C00C3D2920F7475400031952 /* OTProjectDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTProjectDetailCell.swift; sourceTree = "<group>"; };
+		C00C3D2B20F8719A00031952 /* OTSiteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTSiteListCell.swift; sourceTree = "<group>"; };
+		C00C3D2F20F880E900031952 /* OTTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTTools.swift; sourceTree = "<group>"; };
 		C027576420B29C0E00A2B298 /* OTProjectListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTProjectListCell.swift; sourceTree = "<group>"; };
 		C027576620B2A20200A2B298 /* UITableViewCell+CellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CellHeight.swift"; sourceTree = "<group>"; };
 		C027577220B405D500A2B298 /* OTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTLoginModel.swift; sourceTree = "<group>"; };
@@ -104,13 +110,13 @@
 		C02D604D20EF18A500BB6E2C /* OTStsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTStsModel.swift; sourceTree = "<group>"; };
 		C02D604F20EF4F3E00BB6E2C /* OTSiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTSiteView.swift; sourceTree = "<group>"; };
 		C02D605120EF556300BB6E2C /* OTSiteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTSiteCell.swift; sourceTree = "<group>"; };
+		C02D605320F2F23B00BB6E2C /* ProjectDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailVC.swift; sourceTree = "<group>"; };
 		C02E6C8420A14B72001D4963 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C02E6C8620A174BD001D4963 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		C02E6C9820A2C637001D4963 /* JMWhenTapped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWhenTapped.h; sourceTree = "<group>"; };
 		C02E6C9920A2C637001D4963 /* UIView+WhenTappedBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WhenTappedBlocks.m"; sourceTree = "<group>"; };
 		C02E6C9A20A2C637001D4963 /* UIView+WhenTappedBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WhenTappedBlocks.h"; sourceTree = "<group>"; };
 		C02E6CA020A2D730001D4963 /* OTConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTConstans.swift; sourceTree = "<group>"; };
-		C02E6CA220A2D741001D4963 /* OTUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUtils.swift; sourceTree = "<group>"; };
 		C02E6CA420A2DCA6001D4963 /* UIView+OTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+OTExtension.swift"; sourceTree = "<group>"; };
 		C02E6CAB20A3DC8B001D4963 /* UIView+WhenTapBlcok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+WhenTapBlcok.swift"; sourceTree = "<group>"; };
 		C02E6CB120A4219B001D4963 /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
@@ -297,6 +303,7 @@
 		C02E6C9F20A2D675001D4963 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				C00C3D2F20F880E900031952 /* OTTools.swift */,
 				C0337AFB20BE8F5100FCB373 /* En_LanguageList.plist */,
 				C0E9558920A019740091908D /* AppDelegate.swift */,
 				C0E955B220A02B400091908D /* Bridge_header.h */,
@@ -309,7 +316,7 @@
 		C02E6CAD20A420A6001D4963 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C0E3AC1520A562BF00188D3C /* HttpManager */,
+				C0E3AC1620A562DD00188D3C /* HttpManager.swift */,
 				C0E3AC1220A55C5D00188D3C /* SHAEncoder.h */,
 				C0E3AC1320A55C5E00188D3C /* SHAEncoder.m */,
 				C0E3AC1A20A5747800188D3C /* OTLoginCenter.swift */,
@@ -320,7 +327,6 @@
 				C02D604520EE163E00BB6E2C /* BaseCollectionView.swift */,
 				C03E8A7A20B6C75300850D1F /* BaseTableViewCell.swift */,
 				C027577620B40BB900A2B298 /* OTBaseModel.swift */,
-				C02E6CA220A2D741001D4963 /* OTUtils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -447,14 +453,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C0E3AC1520A562BF00188D3C /* HttpManager */ = {
-			isa = PBXGroup;
-			children = (
-				C0E3AC1620A562DD00188D3C /* HttpManager.swift */,
-			);
-			path = HttpManager;
-			sourceTree = "<group>";
-		};
 		C0E3AC2420AA6A7A00188D3C /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +469,7 @@
 				C0A9545F20AED1F2003497F5 /* MyProjectVC.swift */,
 				C0314D3F20AC2FA200317F0C /* OTWKWebController.swift */,
 				C027578720B56D6300A2B298 /* HomeVC.swift */,
+				C02D605320F2F23B00BB6E2C /* ProjectDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,6 +487,8 @@
 			isa = PBXGroup;
 			children = (
 				C027576420B29C0E00A2B298 /* OTProjectListCell.swift */,
+				C00C3D2920F7475400031952 /* OTProjectDetailCell.swift */,
+				C00C3D2B20F8719A00031952 /* OTSiteListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -610,6 +611,7 @@
 		C0E9557E20A019730091908D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = OT;
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = oceanus;
@@ -712,6 +714,7 @@
 				C0337AF420BE7FA600FCB373 /* OTUserInfoModel.swift in Sources */,
 				C027577920B50E3100A2B298 /* UIButton+Extension.swift in Sources */,
 				C027578820B56D6300A2B298 /* HomeVC.swift in Sources */,
+				C00C3D2C20F8719A00031952 /* OTSiteListCell.swift in Sources */,
 				C02E6CA520A2DCA6001D4963 /* UIView+OTExtension.swift in Sources */,
 				C02D604620EE163E00BB6E2C /* BaseCollectionView.swift in Sources */,
 				C027578620B56B8B00A2B298 /* BaseTabbarController.swift in Sources */,
@@ -742,7 +745,6 @@
 				C06150BE20EDA791008DF8DF /* ChartNormalCell.swift in Sources */,
 				C0314D4020AC2FA200317F0C /* OTWKWebController.swift in Sources */,
 				C0DFFD3920D9EC6D00171948 /* MyProtocolCell.swift in Sources */,
-				C02E6CA320A2D741001D4963 /* OTUtils.swift in Sources */,
 				C0A9545C20AEAD79003497F5 /* UIImage+Extension.swift in Sources */,
 				C02E6C8520A14B72001D4963 /* UIColor+HexColor.swift in Sources */,
 				C03E8A7D20B7A38000850D1F /* WaterWaveView.swift in Sources */,
@@ -757,13 +759,16 @@
 				C027576720B2A20200A2B298 /* UITableViewCell+CellHeight.swift in Sources */,
 				C0E9559F20A01DEC0091908D /* LoginVC.swift in Sources */,
 				C02D604420EDC75700BB6E2C /* OTSubNumModel.swift in Sources */,
+				C00C3D2A20F7475400031952 /* OTProjectDetailCell.swift in Sources */,
 				C02E6C9B20A2C637001D4963 /* UIView+WhenTappedBlocks.m in Sources */,
+				C00C3D3020F880E900031952 /* OTTools.swift in Sources */,
 				C0E955AC20A029CC0091908D /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				C0A9545A20AE87B1003497F5 /* UIView+Category.swift in Sources */,
 				C0CC724620B68EF200EB51D8 /* StatisticsVC.swift in Sources */,
 				C0DFFD3520D8FC6800171948 /* SettingVC.swift in Sources */,
 				C02E6CA120A2D730001D4963 /* OTConstans.swift in Sources */,
 				C0E3AC2B20AA73C500188D3C /* OTResponseResult.swift in Sources */,
+				C02D605420F2F23B00BB6E2C /* ProjectDetailVC.swift in Sources */,
 				C027577D20B560AF00A2B298 /* BaseNavigationController.swift in Sources */,
 				C0CC724A20B69E4800EB51D8 /* OTMineCell.swift in Sources */,
 				C0E3AC1B20A5747800188D3C /* OTLoginCenter.swift in Sources */,

@@ -19,7 +19,7 @@ extension String {
     
     init(_ interStr: String) {
         self.init()
-        let key = OTUtils.OTObject(OT_Language_key)
+        let key = OTObject(OT_Language_key)
         let dicPath = Bundle.main.path(forResource: "En_LanguageList", ofType: "plist")
         let dic = NSDictionary(contentsOfFile: dicPath!) as! Dictionary<String, Any>
         if key == "1" {
@@ -36,9 +36,9 @@ extension String {
     
     
 //    init(str: String) {
-//        let key = OTUtils.OTObject(OT_Language_key)
+//        let key = OTObject(OT_Language_key)
 //        if key == "1" {
-//            OTUtils.LogOut("...")
+//            LogOut("...")
 //
 //        }
 //        let dicPath = Bundle.main.path(forResource: "En_LanguageList", ofType: "plist")
@@ -51,7 +51,7 @@ extension String {
     ///
     /// - Returns: 返回对应的字符串
     public func engString() -> String? {
-        let key = OTUtils.OTObject(OT_Language_key)
+        let key = OTObject(OT_Language_key)
         let dicPath = Bundle.main.path(forResource: "En_LanguageList", ofType: "plist")
         let dic = NSDictionary(contentsOfFile: dicPath!) as! Dictionary<String, Any>
         return key == "1" ? (dic[self] as! String) : self

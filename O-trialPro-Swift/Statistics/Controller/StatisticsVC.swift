@@ -29,7 +29,7 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     //  MARK:   - view
-    func configUI() {
+    override func configUI() {
         
         
 //        chart = BarChart(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 300))
@@ -116,7 +116,7 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
         if self.siteArea != nil {
             params["siteId"] = self.siteArea;
         }
-        OTUtils.LogOut(params)
+        LogOut(params)
 //        weak var weakSelf = self
         let path = String(format: "/project/%@/subjectCountInVisit", (OTCenter.shared.projectModel?.vid)!)
         HttpHelper.Shared.Get(path: path, params: params, success: { (jsonString, mes) in
@@ -124,9 +124,9 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
                 UIView.alertText(mes)
                 return
             }
-            OTUtils.LogOut(jsonString)
+            LogOut(jsonString)
             if let arr = JSONDeserializer<OTSubNumModel>.deserializeModelArrayFrom(json: jsonString, designatedPath: "data") {
-//                OTUtils.LogOut(String(format: "%d", arr.count))
+//                LogOut(String(format: "%d", arr.count))
                 self.cv?.reloadData()
                 DispatchQueue.main.async {
                     self.header?.chart?.arr = arr as? [OTSubNumModel]
@@ -134,7 +134,7 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
 
             }
         }) { (error) in
-            OTUtils.LogOut(error.localizedDescription);
+            LogOut(error.localizedDescription);
         }
         
     }
@@ -143,7 +143,7 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
         
         let arr = NSMutableArray(contentsOfFile: Bundle.main.path(forResource: "StatisticsData.plist", ofType: nil)!)
         
-//        OTUtils.LogOut(arr)
+//        LogOut(arr)
         list = Array()
         for dic in arr! {
             let model = OTStsModel()
@@ -159,7 +159,7 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
         if siteArea != nil {
             params["siteId"] = siteArea
         }
-        OTUtils.LogOut(params)
+        LogOut(params)
         
 //        weak var weakSelf = self
         HttpHelper.Shared.Get(path: String(format: "/project/%@/focus", (OTCenter.shared.projectModel?.vid)!), params: params, success: { (jsonString, mes) in
@@ -167,18 +167,18 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
                 UIView.alertText(mes)
                 return
             }
-//            OTUtils.LogOut(jsonString)
+//            LogOut(jsonString)
             let data = jsonString?.data(using: String.Encoding.utf8, allowLossyConversion: true)
             var values = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any?]
             if let dic = values!["data"] {
-                OTUtils.LogOut(dic)
+                LogOut(dic)
                 let dic: [String: Any?] = dic as! [String : Any?]
                 for key in dic.keys {
                     for m in self.list! {
                         if m.enName == key {
                             if dic[key] != nil {
                                 m.num = String(format: "%@", (dic[key] as? NSNumber)!)
-//                                OTUtils.LogOut("\(m.num, dic[key])")
+//                                LogOut("\(m.num, dic[key])")
                             }
                         }
                     }
@@ -186,10 +186,10 @@ class StatisticsVC: BaseViewController, UICollectionViewDelegateFlowLayout, UICo
                 self.cv?.reloadData()
                 self.header?.chart?.cv?.reloadData()
             }
-//            OTUtils.LogOut(values)
+//            LogOut(values)
             
         }) { (error) in
-            OTUtils.LogOut(error.localizedDescription)
+            LogOut(error.localizedDescription)
         }
         
         

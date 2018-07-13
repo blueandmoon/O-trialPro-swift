@@ -19,7 +19,7 @@
 //#import <SDWebImage/SDImageCache.h>
 //#import
 //#import <SD>
-#import "MJExtension.h"
+//#import "MJExtension.h"
 
 
 #endif /* Bridge_header_h */

@@ -19,7 +19,7 @@ class AboutOrialVC: BaseViewController, UITableViewDelegate, UITableViewDataSour
         configUI()
     }
     
-    func configUI() {
+    override func configUI() {
         
         listView = BaseTableView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight - kNavHeight), style: .plain)
         view.addSubview(listView!)
